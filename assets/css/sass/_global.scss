@@ -73,12 +73,13 @@ input{
     #{$rtl} & {
         direction: rtl;
     }
+
+    font-size: 15px;
+
     &::placeholder{
         color: $main;
         font-size: 13px;
         transition: $main-transition;
-        // font-family: fontReg;
-        // line-height: 1;
     }
 
     &:focus{

@@ -53,7 +53,7 @@ const iconsPassSet = document.querySelectorAll('.pass-icon');
 if(iconsPassSet){
   iconsPassSet.forEach((ic) =>{
     ic.addEventListener('click', function(){
-      let input = ic.parentElement.querySelector('.input-me');
+      let input = ic.parentElement.querySelector('input');
       showPassword(input, ic);
     });
   });
@@ -64,11 +64,13 @@ function showPassword(input, icon){
 
   if(input.type == 'password'){
     input.setAttribute('type', 'text');
-    icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
+    // icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
   } else{
     input.setAttribute('type', 'password');
-    icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
+    // icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
   }
+
+  icon.classList.toggle('show')
 }
 
 let isRtl = $('html[lang="ar"]').length > 0;
