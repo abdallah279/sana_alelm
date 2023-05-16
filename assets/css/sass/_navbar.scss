@@ -1,6 +1,6 @@
 .page-header{
     padding: 12px 0;
-    border-bottom: 1px solid rgba($color: $black, $alpha: .3);
+    border-bottom: 1px solid rgba($color: $black, $alpha: .2);
 
     .header-content{
         @include between;
@@ -98,6 +98,15 @@
                         display: block;
                     }
                 }
+            }
+        }
+
+        .profile{
+            @media screen and (max-width:$screen-sm) {
+                flex: 1;
+                display: flex;
+                justify-content: end;
+                @include dir-margin-right(10px)
             }
         }
     }

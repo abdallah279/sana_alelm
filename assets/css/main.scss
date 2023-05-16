@@ -189,18 +189,7 @@
     
     .feature-bg{
         max-width: 100%;
-        max-height: 400px;        
-
-        @media screen and (max-width:$screen-lg) {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: .1;
-            z-index: -1;
-            min-height: 400px;
-        }
-
+        max-height: 400px;
     }
 }
 
@@ -297,11 +286,16 @@
                 object-fit: cover;
                 transition: $main-transition;
             }
+
+
         }
         
         .course-content{
             position: relative;
             padding: 46px 16px 20px;
+            @media screen and (max-width:$screen-xs) {
+                padding: 42px 12px 15px;
+            }
             
             .course-name{
                 position: absolute;
@@ -316,6 +310,11 @@
                 color: $white;
                 border-radius: 8px;
                 font-size: 16px;
+                
+                @media screen and (max-width:$screen-xs) {
+                    font-size: 15px;
+                    min-height: 42px;
+                }
             }
 
             .course-items{
@@ -325,6 +324,10 @@
                     gap: 10px;
                     margin-bottom: 15px;
                     min-height: 23px;
+
+                    @media screen and (max-width:$screen-sm) {
+                        gap: 5px;
+                    }
     
                     .item-img{
                         max-width: 22px;
@@ -334,18 +337,27 @@
                     .item-text{
                         font-size: 15px;
                         color: $black;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        @media screen and (max-width:$screen-sm) {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
 
             .course-footer{
                 @include between;
+                gap: 8px;
 
                 .course-price{
                     display: flex;
                     align-items: end;
                     flex-direction: column;
                     gap: 8px;
+                    flex-shrink: 0;
 
                     .price{
                         color: $main;
@@ -480,6 +492,10 @@
 .numbers-section{
     .number-items{
         @include grid(195px, 30px);
+        
+        @media screen and (max-width:$screen-sm) {
+            @include grid(140px, 20px);
+        }
 
         .item{
             text-align: center;
@@ -488,11 +504,19 @@
                 color: $main;
                 font-size: 19px;
                 margin-bottom: 10px;
+
+                @media screen and (max-width:$screen-xs) {
+                    font-size: 17px;
+                }
             }
 
             .name{
                 color: $black;
                 font-size: 19px;
+
+                @media screen and (max-width:$screen-xs) {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -509,7 +533,7 @@
         
         .right{
             .news-title{
-                font-size: 32px;
+                font-size: 28px;
                 margin-bottom: 25px;
                 color: $dark;
                 font-family: fontDemi;
@@ -528,7 +552,7 @@
             }
             
             .news-desc{
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 1.7;
                 margin-bottom: 20px;
                 width: calc(100% - 50px);
@@ -553,8 +577,11 @@
             .news-form{
                 .news-input{
                     margin-bottom: 15px;
+                    box-shadow: none;
+                    border-radius: 6px;
+                    height: 46px;
 
-                    @media screen and (max-width:$screen-xs) {
+                    @media screen and (max-width:$screen-md) {
                         background-color: transparent;
                     }
                 }
@@ -645,4 +672,230 @@
         }
     }
 
+}
+
+// blog-cards
+.blog-card{
+    border-radius: 8px;
+    overflow: hidden;
+    transition: $main-transition;
+
+    &:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px 0 rgba($color: $black, $alpha: .2);
+    }
+
+    .blog-img{
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .content{
+        padding: 17px 10px;
+        .head{
+            @include between;
+            gap: 5px;
+            margin-bottom: 14px;
+
+            .name{
+                font-size: 17px;
+                color: $black2;
+                font-family: fontDemi;
+                text-overflow: ellipsis;
+            }
+
+            .date{
+                font-size: 14px;
+                color: $text-color;
+                font-family: fontReg;
+            }
+        }
+
+        .info{
+            font-size: 15px;
+            color: $black2;
+            margin-bottom: 14px;
+            height: 75px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            line-height: 1.7;
+            
+            @media screen and (max-width:$screen-md) {
+                height: auto;
+                -webkit-line-clamp: initial;
+            }
+        }
+
+        .main-btn{
+            width: calc(100% - 40px);
+            margin: auto;
+        }
+    }
+}
+
+
+// contact-img
+.contact{
+    position: relative;
+
+    .contact-img{
+        max-width: 100%;
+    }
+}
+
+// new-detailes
+.new-detailes{
+
+    .content{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media screen and (max-width:$screen-md) {
+            flex-wrap: wrap;
+        }
+
+        .img{
+            flex-basis: 50%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+
+            @media screen and (max-width:$screen-md) {
+                flex-basis: 100%;
+                width: 100%;
+                height: 240px;
+            }
+        }
+
+        .left{
+            .name{
+                font-size: 22px;
+                color: $black;
+                margin-bottom: 15px;
+                font-family: fontDemi;
+
+                @media screen and (max-width:$screen-xs) {
+                    font-size: 19px;
+                }
+            }
+
+            .date{
+                font-size: 17px;
+                color: $text-color;
+                font-family: fontReg;
+
+                @media screen and (max-width:$screen-xs) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .info{
+        font-size: 17px;
+        line-height: 1.6;
+
+        @media screen and (max-width:$screen-xs) {
+            font-size: 15px;
+        }
+    }
+
+}
+
+// notification-sec
+.notification-sec{
+    position: relative;
+    .not-items{
+        @include grid(280px, 25px);
+
+        .not-item{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            @media screen and (max-width:$screen-xs) {
+                gap: 8px;
+            }
+
+            .not-img{
+                @include center;
+                @include circle(50px);
+                border: 2px solid $main;
+                flex-shrink: 0;
+
+                @media screen and (max-width:$screen-xs) {
+                    @include circle(44px);
+                    border-width: 1px;
+                }
+
+                .img{
+                    max-height: 24px;
+
+                    @media screen and (max-width:$screen-xs) {
+                        max-height: 20px;
+                    }
+                }
+
+                
+            }
+
+            .info{
+                font-size: 16px;
+                color: $black;
+                margin-bottom: 8px;
+            }
+
+            .text{
+                font-size: 15px;
+                color: $text-color;
+                // font-family: fontReg;
+            }
+        }
+    }
+
+    .not-bg{
+        max-width: 100%;
+        // max-height: 300px;
+    }
+}
+
+// check-input-card
+.check-card{
+    position: relative;
+
+    .check-input-card{
+        display: none;
+
+        &:checked + .check-label-card{
+            background-color: $main;
+            .ic{
+                opacity: 1;
+            }
+        }
+    }
+
+    .check-label-card{
+        position: absolute;
+        top: 10px;
+        @include dir-right(10px);
+        width: 34px;
+        height: 34px;
+        border-radius: 7px;
+        background-color: $border-color;
+        z-index: 20;
+        cursor: pointer;
+        @include center;
+        transition: $main-transition;
+
+        .ic{
+            font-size: 16px;
+            color: $white;
+            opacity: 0;
+            transition: $main-transition;
+        }
+    }
 }

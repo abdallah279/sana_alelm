@@ -157,8 +157,18 @@
   box-shadow: 0 .400rem .400rem .5rem rgba($black2, .1);
 }
 
+.shadow-lg-0{
+  @media screen and (max-width:$screen-lg) {
+    box-shadow: unset;
+  }
+}
+
 .grid-4{
   @include grid(250px, 45px);
+
+  @media screen and (max-width:$screen-md) {
+    @include grid(210px, 20px);
+  }
 }
 
 .grid-3{
@@ -178,6 +188,18 @@
 
 .mt-14{
   margin-top: 14px;
+}
+
+.responsive-img{
+  @media screen and (max-width:$screen-lg) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .1;
+    z-index: -1;
+    min-height: 400px;
+  }
 }
 
 // Drop Down
@@ -510,7 +532,7 @@
 
 /********************* Titles *********************/
 .big-title{
-  font-size: 25px;
+  font-size: 23px;
   color: $dark;
   font-family: fontDemi;
 
@@ -522,6 +544,26 @@
 .color-title{
   font-size: 20px;
   color: $dark;
+}
+
+.section-title{
+  position: relative;
+  color: $dark;
+  font-size: 18px;
+  width: fit-content;
+  margin: auto;
+
+  &::after{
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% );
+    height: 3px;
+    border-radius: 40px;
+    background-color: $dark;
+  }
 }
 
 
@@ -555,8 +597,8 @@
       font-size: 15px;
     }
 
-    @media screen and (max-width:$screen-xs) {
-      width: 132px;
+    @media screen and (max-width:$screen-sm) {
+      min-width: 132px;
     }
 
     &.yellow-transparent{
@@ -591,10 +633,10 @@
     &.transparent{
       background-color: $white;
       color: $dark;
-      border-color: $dark;
+      border-color: $main;
 
       &:hover{
-        background-color: $dark;
+        background-color: $main;
         color: #fff;
       }
     }
@@ -613,8 +655,9 @@
     }
 
     &.md{
-      width: 190px;
+      min-width: 190px;
       height: 46px;
+      font-size: 16px;
     }
 
     &.lg{
@@ -687,7 +730,7 @@
 /********************* Colors *********************/
 
 .c-black{
-  color: $black;
+  color: $black !important;
 }
 
 .c-black2{
@@ -695,7 +738,11 @@
 }
 
 .c-main{
-  color: $main;
+  color: $main !important;
+}
+
+.c-red{
+  color: $red !important;
 }
 
 .bg-white{
@@ -714,8 +761,12 @@
   cursor: pointer;
 }
 
+.fs-13{
+  font-size: 13px !important;
+}
+
 .fs-14{
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .fs-15{
@@ -723,7 +774,7 @@
 }
 
 .fs-16{
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 .fs-17{
@@ -978,13 +1029,13 @@
 
 /********************* Inputs *********************/
 .input-g{
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   display: block;
 }
 
 .main-label{
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin-bottom: 12px;
+  font-size: 15px;
   // font-family: fontDemi;
   color: $black;
   display: flex;
@@ -1099,6 +1150,26 @@
       }
     }
   }
+
+
+  &.form{
+
+    .input-me{
+      @include dir-padding-left(40px);
+    }
+
+    .main-icon{
+      top: 22px;
+      transform: unset;
+      @include dir-right(unset);
+      @include dir-left(14px);
+      top: 13px;
+      transform: unset;
+      max-width: 20px;
+      max-height: 18px;
+    }
+
+  }
 }
 
 
@@ -1107,25 +1178,36 @@
   ~ .select2 {
     width: 100% !important;
 
+
+    // width: 100%;
+    // padding: 0 12px;
+    // outline: none;
+    // border: none;
+    // font-size: 14px;
+    // color: $dark;
+    // transition: $main-transition;
+    // background-color: $white;
+    
     .select2-selection--single, .select2-selection--multiple {
-      min-height: 48px;
+      min-height: 45px;
       display: flex;
       align-items: center;
-      border-radius: 5px;
+      border-radius: 8px;
       // padding: 6px 0;
       outline: none;
       font-size: 14px;
       color: $dark;
-      border: 1px solid $border-color;
+      border: 1px solid $main;
+      box-shadow: $main-shadow;
 
       @media (max-width: $screen-xs) {
-        height: 44px;
+        min-height: 44px;
       }
 
       
       .select2-selection__rendered {
-        color: $placholder-color;
-        font-size: 13px;
+        color: $dark;
+        font-size: 14px;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
@@ -1273,6 +1355,16 @@
   }
 }
 
+.flatpickr-day.selected{
+  background-color: $main;
+  border-color: $main;
+
+  &:hover{
+    background-color: $main;
+    border-color: $main;
+  }
+}
+
 
 // CheckBox Input
 .check-box{
@@ -1379,9 +1471,9 @@
 // RadioBoxs Inputs
 .radio-box{
   display: flex;
-  // align-items: center;
+  align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  // margin-bottom: 8px;
 
   &:last-child{
     margin-bottom: 0;
@@ -1390,8 +1482,10 @@
   .input-radio{
     width: 18px;
     height: 18px;
-    accent-color: $dark;
+    accent-color: #7a8c7b;
+    // appearance: none;
     cursor: pointer;
+    transition: $main-transition;
   }
 
   .label-radio{
@@ -1500,21 +1594,6 @@
   .profile-img{
     @include circle(100%); 
     overflow: hidden;
-    // width: 100%;
-    // height: 100%;
-    // border-radius: 50%;
-    // position: relative;
-    
-    // &::after{
-    //   position: absolute;
-    //   content: '';
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   border: 6px solid rgba($color: #fff, $alpha: .4);
-    //   border-radius: 50%;
-    // }
     
     img{
       width: 100%;
@@ -1553,8 +1632,8 @@
 .hidden-img{
   position: relative;
   flex-shrink: 0;
-  width: 45px;
-  height: 45px;
+  width: 48px;
+  height: 48px;
   margin-top: 8px;
   
   img{
@@ -1902,7 +1981,7 @@
     .login-btn{
       min-height: 50px;
       border-radius: 10px;
-      width: 100%;
+      // width: 100%;
     }
   }
 }
@@ -2000,7 +2079,7 @@
   }
 
   &.left{
-    min-width: 190px;
+    min-width: 180px;
       #{$ltr} & {
         inset: 60px 0% auto auto;
       }
@@ -2016,25 +2095,6 @@
           inset: 55px auto auto 0% !important;
         }
       }
-
-      .drop-item{
-        display: block;
-        padding: 10px;
-        text-align: center;
-        font-size: 15px;
-        border-bottom: 1px solid $border-color;
-        color: $black;
-
-        &:last-child{
-          border-bottom: none;
-        }
-
-        &.red{
-          color: $red;
-        }
-      }
-
-
   }
 
   &.drop-lang{
@@ -2066,6 +2126,20 @@
       }
     }
   }
+
+  .drop-item{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: $black;
+    width: 100%;
+    transition: $main-transition;
+
+    &:hover{
+      color: $main;
+    }
+  }
 }
 
 .dropdown-toggle{
@@ -2082,6 +2156,9 @@
 
   .drop-text{
     font-size: 15px;
+
+    
+        
   }
 
   .drop-ic{
@@ -2093,6 +2170,20 @@
 
 .dropdown-toggle::after{
   display: none !important;
+}
+
+.profile-drop{
+  .profile-img{
+    @include circle(40px);
+  }
+
+  .profile-name{
+    font-size: 15px;
+
+    @media screen and (max-width:$screen-xs) {
+      display: none;
+    }
+  }
 }
 
 .accordion-collapse .dropdown-menu{
