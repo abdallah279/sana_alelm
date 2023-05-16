@@ -423,7 +423,7 @@
     <!-- Login By Mobile Modal -->
     <div class="modal fade" id="buyModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered lg">
-          <div class="modal-content px-5">
+          <div class="modal-content px-4 px-lg-5">
 
             <form action="" class="w-100">
 
@@ -449,7 +449,7 @@
 
                   </div>
 
-                  <div class="inputs mt-4 px-4">
+                  <div class="inputs mt-4 px-lg-4 px-2">
                       
                         <div class="input-g">
                             <label for="" class="main-label">البنك</label>
@@ -498,13 +498,40 @@
                 <div class="modal-footer">
                     
                     <div class="buttons w-100 justify-content-center">
-                        <button type="button" data-bs-target="#codeModal" data-bs-toggle="modal" class="main-btn up login-btn">تاكيد الدفع</button>
+                        <button type="button" data-bs-target="#doneModal" data-bs-toggle="modal" class="main-btn up login-btn">تاكيد الدفع</button>
                         <button type="button" data-bs-dismiss="modal" class="main-btn transparent login-btn">العودة</button>
                     </div>
     
                 </div>
 
             </form>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- doneModal Modal -->
+    <div class="modal fade" id="doneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+            </div>
+
+            <div class="modal-body">
+                <h3 class="modal-title mb-2">تم الدفع بنجاح</h3>
+    
+                <img src="./assets/imgs/icons/right_anm.gif" alt="" class="modal-img-body mx-auto">
+            </div>
+
+            <div class="modal-footer mt-2">
+                <div class="buttons w-100 justify-content-center">
+                    <a href="index.html" class="main-btn up login-btn">الرئيسية</a>
+                    <a href="profile.html" class="main-btn login-btn transparent">تعلم الأن</a>
+                </div>
+            </div>
 
           </div>
         </div>
@@ -538,6 +565,7 @@
     <script>
         $(".date").flatpickr({
             enableTime: true,
+            disableMobile: "true"
         });
     </script>
 

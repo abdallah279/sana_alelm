@@ -287,6 +287,9 @@
                 transition: $main-transition;
             }
 
+            @media screen and (max-width:$screen-xs) {
+                height: 200px;
+            }
 
         }
         
@@ -294,7 +297,7 @@
             position: relative;
             padding: 46px 16px 20px;
             @media screen and (max-width:$screen-xs) {
-                padding: 42px 12px 15px;
+                padding: 40px 12px 15px;
             }
             
             .course-name{
@@ -314,6 +317,7 @@
                 @media screen and (max-width:$screen-xs) {
                     font-size: 15px;
                     min-height: 42px;
+                    top: -21px;
                 }
             }
 
@@ -322,7 +326,7 @@
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    margin-bottom: 15px;
+                    margin-bottom: 12px;
                     min-height: 23px;
 
                     @media screen and (max-width:$screen-sm) {

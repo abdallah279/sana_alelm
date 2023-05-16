@@ -3120,13 +3120,18 @@ html[lang=ar] .filter.sm .filter-select .select ~ .select2 .select2-selection--s
      object-fit: cover;
   transition: all 0.3s ease;
 }
+@media screen and (max-width: 425px) {
+  .courses-cards .course-card .img {
+    height: 200px;
+  }
+}
 .courses-cards .course-card .course-content {
   position: relative;
   padding: 46px 16px 20px;
 }
 @media screen and (max-width: 425px) {
   .courses-cards .course-card .course-content {
-    padding: 42px 12px 15px;
+    padding: 40px 12px 15px;
   }
 }
 .courses-cards .course-card .course-content .course-name {
@@ -3149,13 +3154,14 @@ html[lang=ar] .filter.sm .filter-select .select ~ .select2 .select2-selection--s
   .courses-cards .course-card .course-content .course-name {
     font-size: 15px;
     min-height: 42px;
+    top: -21px;
   }
 }
 .courses-cards .course-card .course-content .course-items .item {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   min-height: 23px;
 }
 @media screen and (max-width: 576px) {
