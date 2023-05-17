@@ -30,6 +30,11 @@ $('.side-open').on('click', function(){
   $('.overlay-m').fadeIn(600);
 });
 
+$('.side-user-open').on('click', function(){
+  $('.side-links').addClass('active');
+  $('.overlay-m').fadeIn(600);
+});
+
 $('.close').on('click', function(){
   $('.links').removeClass('active');
   $('.overlay-m').fadeOut(500);
@@ -37,6 +42,7 @@ $('.close').on('click', function(){
 
 $('.overlay-m').on('click', function(){
   $('.links').removeClass('active');
+  $('.side-links').removeClass('active');
   $(this).fadeOut(500);
 });
 
