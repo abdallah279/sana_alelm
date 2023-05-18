@@ -4094,13 +4094,13 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   }
 }
 .course-detailes .content .right .name {
-  font-size: 21px;
+  font-size: 18px;
   font-family: fontDemi;
   color: #202020;
 }
 @media screen and (max-width: 576px) {
   .course-detailes .content .right .name {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 .course-detailes .content .right .link {
@@ -4205,6 +4205,10 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   align-items: end;
   flex-direction: column;
   gap: 10px;
+}
+.course-detailes .content .left .main-btn {
+  min-width: 150px;
+  font-size: 15px;
 }
 @media screen and (max-width: 1280px) {
   .course-detailes .content .left .main-btn {
