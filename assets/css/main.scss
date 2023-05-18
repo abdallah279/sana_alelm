@@ -1363,25 +1363,24 @@
         .center{
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px 15px;
             background-color: $white;
             box-shadow: $main-shadow;
             padding: 10px 20px;
             border-radius: 8px;
 
-            // @media screen and (max-width:$screen-md) {
-            //     margin-top: 20px;
-            //     flex-direction: column;
-            // }
+            @media screen and (max-width:$screen-md) {
+                flex-direction: column;
+            }
 
             .items{
                 @include grid(180px, 10px);
                 width: 100%;
                 // flex-shrink: 0;
                 
-                // @media screen and (max-width:$screen-sm) {
-                //     @include grid(155px, 10px);
-                // }
+                @media screen and (max-width:$screen-sm) {
+                    @include grid(155px, 10px);
+                }
                 
                 .item{
                     display: flex;
@@ -1416,6 +1415,7 @@
 
                 @media screen and (max-width:$screen-md) {
                     flex-direction: row;
+                    padding: 10px 15px;
                 }
 
                 .num{
@@ -1447,7 +1447,8 @@
                 font-size: 15px;
                 @media screen and (max-width:$screen-xl) {
                     min-width: 140px;
-                    font-size: 15px;
+                    font-size: 14px;
+                    height: 42px;
                 }
             }
         }

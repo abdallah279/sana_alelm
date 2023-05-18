@@ -4146,17 +4146,29 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
 .course-detailes .content .center {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px 15px;
   background-color: #fff;
   box-shadow: 0 0 8px 0 rgba(32, 32, 32, 0.1);
   padding: 10px 20px;
   border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .course-detailes .content .center {
+    flex-direction: column;
+  }
 }
 .course-detailes .content .center .items {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 12px 10px;
   width: 100%;
+}
+@media screen and (max-width: 576px) {
+  .course-detailes .content .center .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: 12px 10px;
+  }
 }
 .course-detailes .content .center .items .item {
   display: flex;
@@ -4192,6 +4204,7 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
 @media screen and (max-width: 768px) {
   .course-detailes .content .center .price-item {
     flex-direction: row;
+    padding: 10px 15px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -4213,7 +4226,8 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
 @media screen and (max-width: 1280px) {
   .course-detailes .content .left .main-btn {
     min-width: 140px;
-    font-size: 15px;
+    font-size: 14px;
+    height: 42px;
   }
 }
 @media screen and (max-width: 1200px) {
