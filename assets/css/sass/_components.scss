@@ -539,6 +539,10 @@
   @media screen and (max-width:$screen-sm) {
     font-size: 20px;
   }
+
+  &.sm{
+    font-size: 18px;
+  }
 }
 
 .color-title{
@@ -783,6 +787,10 @@
 
 .fs-16{
   font-size: 16px !important;
+
+  @media screen and (max-width:$screen-xs) {
+    font-size: 15px !important;
+  }
 }
 
 .fs-17{
@@ -870,7 +878,7 @@
 }
 
 .main-pb{
-  padding-bottom: 48px;
+  padding-bottom: 48px !important;
   
   @media screen and (max-width:$screen-xs) {
     padding-bottom: 38px;
@@ -1032,18 +1040,16 @@
   height: 100%;
 }
 
-// .star{
-//   display: flex;
-//   gap: 5px;
-//   color: #000000;
-//   font-size: 14px;
-//   font-family: fontDemi;
+.stars{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  .star{
+    font-size: 17px;
+    color: $sec;
+  }
+}
 
-//   i{
-//     color: $gold3;
-//     font-size: 16px;
-//   }
-// }
 
 
 
