@@ -154,7 +154,7 @@
 }
 
 .shadow-sm{
-  box-shadow: 0 .400rem .400rem .5rem rgba($black2, .1);
+  box-shadow: 0 0 4px 0 rgba($black2, .1);
 }
 
 .shadow-lg-0{
@@ -188,6 +188,15 @@
 
 .mt-14{
   margin-top: 14px;
+}
+
+.pl-25{
+  @include dir-padding-right(25px !important)
+}
+
+.done{
+  color: $orange;
+  font-size: 24px;
 }
 
 .responsive-img{
@@ -373,6 +382,30 @@
 
 }
 
+
+.tabs{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .tab{
+    background-color: transparent;
+    font-size: 15px;
+    color: $black;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: $main-transition;
+
+    &:hover{
+      color: $main;
+    }
+    
+    &.active{
+      background-color: $main;
+      color: $white;
+    }
+  }
+}
 
 /********************* steps *********************/
 .steps {
@@ -636,7 +669,7 @@
 
     &.transparent{
       background-color: $white;
-      color: $dark;
+      color: $black;
       border-color: $main;
 
       &:hover{
@@ -700,6 +733,11 @@
         font-size: 16px;
         border-radius: 8px;
       }
+    }
+
+    .ic{
+      max-width: 15px;
+      max-height: 13px;
     }
 }
 
@@ -891,6 +929,10 @@
 
 .sec-pt{
   padding-top: 30px;
+}
+
+.sec-pb{
+  padding-bottom: 30px;
 }
 
 .rounded-3{
@@ -1111,7 +1153,7 @@
       display: flex;
       align-items: center;
       font-size: 14px;
-      color: $placholder-color;
+      color: $black;
       cursor: pointer;
     }
 
@@ -1132,6 +1174,10 @@
     &.text-area{
       height: 145px;
       padding: 12px;
+
+      &.sm{
+        height: 90px;
+      }
     }
   }
 
@@ -1148,6 +1194,7 @@
     border: none;
     outline: none;
     padding: 0;
+    max-width: 20px;
 
     .ic{
       max-width: 20px;
@@ -1648,6 +1695,24 @@
   cursor: pointer;
 }
 
+.file-con{
+  border: 1px solid $main;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $main;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-top: 10px;
+  width: fit-content;
+  cursor: pointer;
+
+  .close{
+    color: $black;
+  }
+}
+
 .hidden-img{
   position: relative;
   flex-shrink: 0;
@@ -1703,6 +1768,16 @@
   &.active{
     justify-content: flex-start
   }
+}
+
+.edit-pass{
+  font-size: 16px;
+  color: $main;
+  position: absolute;
+  top: 0;
+  @include dir-right(0);
+  cursor: pointer;
+  text-decoration: underline
 }
 
 /********************* Code Modal *********************/
@@ -1775,7 +1850,7 @@
     
     .modal-content{
       border-radius: 12px;
-      padding: 40px 110px 45px;
+      padding: 40px 90px 45px;
 
       .modal-body {
         padding: 0;
@@ -1986,7 +2061,8 @@
       }
       
       .main-btn{
-        margin: 0
+        margin: 0;
+        min-width: 190px;
       }
 
       .social-ic{
@@ -2212,3 +2288,110 @@
 .accordion-collapse.show .dropdown-menu{
   display: block;
 }
+
+
+
+.accordion-item{
+  border: none;
+  margin-bottom: 15px;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+  
+  .accordion-button{
+    border: 1px solid rgba($black, .05);
+    border-radius: 5px !important;
+    padding: 8px 15px;
+    // &.collapsed{
+    // }
+
+    &::after{
+      content: "\f107";
+      font-family: "Font Awesome 5 Free";
+      background-image: none !important;
+      font-weight: 600;
+    }
+
+    
+
+    &:not(.collapsed){
+      box-shadow: $main-shadow;
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  .accordion-body{
+    padding: 20px 35px 5px;
+    // background-color: #faf9f9;
+
+    .acc-item{
+      margin-bottom: 10px;
+      border: 1px solid rgba($black2, .05);
+      box-shadow: 1px 1px 5px 1px rgba($color: $black, $alpha: .1);
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:last-child .accordion-button{
+    margin-bottom: 0;
+  }
+  
+}
+
+
+.acc-item{
+  background-color: $white;
+
+  &.row{
+    margin: 0;
+  }
+
+  .right{
+    @include between;
+
+    .first{
+      .name{
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 8px;
+        display: block;
+        font-family: fontDemi;
+      }
+
+      .info{
+        font-size: 15px;
+        color: $black;
+      }
+    }
+
+    .price{
+      font-size: 14px;
+      color: $white;
+      min-width: 60px;
+      background-color: $main;
+      padding: 6px 10px;
+      border-radius: 5px;
+      @include center;
+    }
+  }
+
+  .left{
+    .show-anchor{
+      background-color: transparent;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .video-ic{
+        max-width: 15px;
+      }
+    }
+  }
+}
+

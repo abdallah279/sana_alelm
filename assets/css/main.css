@@ -381,7 +381,7 @@ input:focus {
 }
 
 .shadow-sm {
-  box-shadow: 0 0.4rem 0.4rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 992px) {
@@ -422,6 +422,18 @@ input:focus {
 
 .mt-14 {
   margin-top: 14px;
+}
+
+html[lang=en] .pl-25 {
+  padding-right: 25px !important;
+}
+html[lang=ar] .pl-25 {
+  padding-left: 25px !important;
+}
+
+.done {
+  color: #46AB4D;
+  font-size: 24px;
 }
 
 @media screen and (max-width: 992px) {
@@ -595,6 +607,27 @@ html[lang=ar] .dropdown-m-container .dropdown-m {
 .nav.nav-pills .nav-link.color-none.active, .nav.nav-pills .nav-link.color-none:hover {
   background-color: transparent;
   color: #8BA78D;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tabs .tab {
+  background-color: transparent;
+  font-size: 15px;
+  color: #202020;
+  padding: 10px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.tabs .tab:hover {
+  color: #8BA78D;
+}
+.tabs .tab.active {
+  background-color: #8BA78D;
+  color: #fff;
 }
 
 /********************* steps *********************/
@@ -850,7 +883,7 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
 }
 .main-btn.transparent {
   background-color: #fff;
-  color: #060042;
+  color: #202020;
   border-color: #8BA78D;
 }
 .main-btn.transparent:hover {
@@ -910,6 +943,10 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
     font-size: 16px;
     border-radius: 8px;
   }
+}
+.main-btn .ic {
+  max-width: 15px;
+  max-height: 13px;
 }
 
 .buttons {
@@ -1113,6 +1150,10 @@ html[lang=ar] .remove-append {
 
 .sec-pt {
   padding-top: 30px;
+}
+
+.sec-pb {
+  padding-bottom: 30px;
 }
 
 .rounded-3 {
@@ -1330,7 +1371,7 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: #adabab;
+  color: #202020;
   cursor: pointer;
 }
 .main-input .input-me::-moz-placeholder {
@@ -1357,6 +1398,9 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
   height: 145px;
   padding: 12px;
 }
+.main-input .input-me.text-area.sm {
+  height: 90px;
+}
 .main-input .main-icon {
   position: absolute;
   top: 50%;
@@ -1369,6 +1413,7 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
   border: none;
   outline: none;
   padding: 0;
+  max-width: 20px;
 }
 html[lang=en] .main-input .main-icon {
   right: 14px;
@@ -1805,6 +1850,24 @@ html[lang=ar] .user-img .user-camera {
   cursor: pointer;
 }
 
+.file-con {
+  border: 1px solid #8BA78D;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8BA78D;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-top: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.file-con .close {
+  color: #202020;
+}
+
 .hidden-img {
   position: relative;
   flex-shrink: 0;
@@ -1864,6 +1927,21 @@ html[lang=ar] .remove-img {
 }
 .img-upload-show.active {
   justify-content: flex-start;
+}
+
+.edit-pass {
+  font-size: 16px;
+  color: #8BA78D;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+html[lang=en] .edit-pass {
+  right: 0;
+}
+html[lang=ar] .edit-pass {
+  left: 0;
 }
 
 /********************* Code Modal *********************/
@@ -1934,7 +2012,7 @@ html[lang=ar] .remove-img {
 }
 .modal-dialog.lg .modal-content {
   border-radius: 12px;
-  padding: 40px 110px 45px;
+  padding: 40px 90px 45px;
 }
 .modal-dialog.lg .modal-content .modal-body {
   padding: 0;
@@ -2133,6 +2211,7 @@ html[lang=ar] .modal-dialog .close-btn {
 }
 .modal-dialog .modal-content .modal-footer .main-btn {
   margin: 0;
+  min-width: 190px;
 }
 .modal-dialog .modal-content .modal-footer .social-ic .ic {
   max-width: 45px;
@@ -2323,6 +2402,88 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 
 .accordion-collapse.show .dropdown-menu {
   display: block;
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: 15px;
+}
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+.accordion-item .accordion-button {
+  border: 1px solid rgba(32, 32, 32, 0.05);
+  border-radius: 5px !important;
+  padding: 8px 15px;
+}
+.accordion-item .accordion-button::after {
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  background-image: none !important;
+  font-weight: 600;
+}
+.accordion-item .accordion-button:not(.collapsed) {
+  box-shadow: 0 0 8px 0 rgba(32, 32, 32, 0.1);
+  background-color: #fff;
+  color: #202020;
+}
+.accordion-item .accordion-body {
+  padding: 20px 35px 5px;
+}
+.accordion-item .accordion-body .acc-item {
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 5px 1px rgba(32, 32, 32, 0.1);
+}
+.accordion-item .accordion-body .acc-item:last-child {
+  margin-bottom: 0;
+}
+.accordion-item:last-child .accordion-button {
+  margin-bottom: 0;
+}
+
+.acc-item {
+  background-color: #fff;
+}
+.acc-item.row {
+  margin: 0;
+}
+.acc-item .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.acc-item .right .first .name {
+  font-size: 16px;
+  color: #202020;
+  margin-bottom: 8px;
+  display: block;
+  font-family: fontDemi;
+}
+.acc-item .right .first .info {
+  font-size: 15px;
+  color: #202020;
+}
+.acc-item .right .price {
+  font-size: 14px;
+  color: #fff;
+  min-width: 60px;
+  background-color: #8BA78D;
+  padding: 6px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.acc-item .left .show-anchor {
+  background-color: transparent;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.acc-item .left .show-anchor .video-ic {
+  max-width: 15px;
 }
 
 .page-header {
@@ -4069,6 +4230,11 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+}
+.course-page-img.lg {
+  height: 380px;
+  border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
   .course-page-img {
@@ -4080,6 +4246,25 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.course-page-img .video {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8BA78D;
+  z-index: 5;
+}
+.course-page-img .video .ic {
+  max-width: 20px;
 }
 
 .course-detailes .content .right {
@@ -4218,20 +4403,75 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   align-items: end;
   flex-direction: column;
   gap: 10px;
-}
-.course-detailes .content .left .main-btn {
-  min-width: 150px;
-  font-size: 15px;
-}
-@media screen and (max-width: 1280px) {
-  .course-detailes .content .left .main-btn {
-    min-width: 140px;
-    font-size: 14px;
-    height: 42px;
-  }
+  height: 100%;
+  justify-content: center;
 }
 @media screen and (max-width: 1200px) {
   .course-detailes .order-m {
     order: 3 !important;
   }
+}
+
+.line-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.line-container .line {
+  width: 100%;
+  height: 14px;
+  border-radius: 25px;
+  background-color: #D9D9D9;
+}
+.line-container .line .color {
+  display: block;
+  background-color: #EEDA8D;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+}
+.line-container .text {
+  color: #202020;
+  font-size: 15px;
+}
+
+.file-item {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.file-item:last-child {
+  margin-bottom: 0;
+}
+.file-item .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.file-item .right .file-name {
+  font-size: 15px;
+  color: #202020;
+  font-family: fontDemi;
+}
+.file-item .right .file-ic {
+  max-width: 20px;
+  max-height: 20px;
+}
+.file-item .file-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-width: 90px;
+  background-color: #8BA78D;
+  color: #fff;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.file-item .file-btn .download-ic {
+  max-height: 20px;
+  max-width: 14px;
 }/*# sourceMappingURL=main.css.map */

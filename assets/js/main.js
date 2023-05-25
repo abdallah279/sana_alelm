@@ -101,3 +101,7 @@ $(document).on('click', '.heart' ,function(){
 })
 
 
+$('[data-pass]').on('click', function(){
+  let item = $(this).attr('data-pass')
+  sessionStorage.setItem("activeTab", JSON.stringify(item));
+})

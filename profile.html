@@ -51,10 +51,10 @@
                         <span class="text">+966 123 456 789</span>
                     </a>
 
-                    <a href="#" class="item">
+                    <div class="item">
                         <img src="assets/imgs/icons/location.png" class="icon" alt="">
                         <span class="text">المملكة العربية السعودية</span>
-                    </a>
+                    </div>
 
                     <a href="mailto:abdallahzeko8@gmail.com" target="_blank" class="item">
                         <img src="assets/imgs/icons/sms.png" class="icon" alt="">
@@ -151,7 +151,7 @@
     <!-- End Navbar -->
 
 
-    <!-- Start University Section -->
+    <!-- Start profile Section -->
     <section class="cart-sec main-padding">
         <div class="container">
 
@@ -233,7 +233,7 @@
                                     </div>
             
                                     <div class="course-footer">
-                                        <a href="#" class="main-btn yellow-transparent">متابعة</a>
+                                        <a href="course.html" class="main-btn yellow-transparent">متابعة</a>
                                         <div class="course-price">
                                             <span class="price">نشط</span>
                                         </div>
@@ -270,7 +270,7 @@
                                     </div>
             
                                     <div class="course-footer">
-                                        <a href="#" class="main-btn yellow-transparent">متابعة</a>
+                                        <a href="course.html" class="main-btn yellow-transparent">متابعة</a>
                                         <div class="course-price">
                                             <span class="price">نشط</span>
                                         </div>
@@ -307,7 +307,7 @@
                                     </div>
             
                                     <div class="course-footer">
-                                        <a href="#" class="main-btn yellow-transparent">متابعة</a>
+                                        <a href="course.html" class="main-btn yellow-transparent">متابعة</a>
                                         <div class="course-price">
                                             <span class="price">نشط</span>
                                         </div>
@@ -353,7 +353,7 @@
                                     </div>
             
                                     <div class="course-footer">
-                                        <a href="#" class="main-btn yellow-transparent">مراجعة</a>
+                                        <a href="course.html" class="main-btn yellow-transparent">مراجعة</a>
                                         <div class="course-price">
                                             <span class="price">منتهي</span>
                                         </div>
@@ -390,7 +390,7 @@
                                     </div>
             
                                     <div class="course-footer">
-                                        <a href="#" class="main-btn yellow-transparent">مراجعة</a>
+                                        <a href="course.html" class="main-btn yellow-transparent">مراجعة</a>
                                         <div class="course-price">
                                             <span class="price">منتهي</span>
                                         </div>
@@ -427,7 +427,7 @@
                                     </div>
             
                                     <div class="course-footer">
-                                        <a href="#" class="main-btn yellow-transparent">مراجعة</a>
+                                        <a href="course.html" class="main-btn yellow-transparent">مراجعة</a>
                                         <div class="course-price">
                                             <span class="price">منتهي</span>
                                         </div>
@@ -440,12 +440,14 @@
                     </div>
 
                     <!-- User Account -->
-                    <form action="" class="tabs-show account">
+                    <form action="" class="tabs-show account position-relative" >
                         
                         <div class="row">
                             <div class="col-xl-9 mx-auto">
     
                                 <div class="item mb-5">
+
+                                    <span class="edit-pass" data-bs-toggle="modal" data-bs-target="#newPasswordModal">تعديل كلمة المرور</span>
     
                                     <h2 class="section-title mb-5">البيانات الشخصية</h2>
                                     
@@ -743,8 +745,7 @@
 
         </div>
     </section>
-    
-    <!-- End University Section -->
+    <!-- End profile Section -->
 
 
 
@@ -790,8 +791,8 @@
                     <div class="foot-content">
                         <h3 class="footer-head">أخرى</h3>
                         <div class="footer-links">
-                            <a href="#" class="link">طرق الدفع</a>
-                            <a href="#" class="link">الأحكام والشروط</a>
+                            <a href="profile.html" class="link" data-pass='payment'>طرق الدفع</a>
+                            <a href="profile.html" class="link" data-pass='conditions'>الأحكام والشروط</a>
                             <a href="#" class="link">الإشتراك</a>
                         </div>
                     </div>
@@ -858,6 +859,238 @@
 
 
 
+    <!-- New Password Modal -->
+    <div class="modal fade" id="newPasswordModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <form action="" class="w-100">
+
+                <div class="modal-header">
+                  <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+                </div>
+    
+                <div class="modal-body">
+                    <h3 class="modal-title">تغيير كلمة المرور</h3>
+                    
+                    <div class="items">
+                        <p class="modal-text mb-2">كلمة المرور السابقة</p>
+                        
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء ادخال كلمة المرور السابقة" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+                        
+                        <p class="modal-text mb-2">كلمة مرور جديدة</p>
+
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء تعيين كلمة مرور جديدة" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء تأكيد كلمة المرور" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+
+                    </div>
+    
+                </div>
+    
+                <div class="modal-footer">
+                    
+                    <button type="submit" class="main-btn up login-btn w-100">تأكيد</button>
+
+                    <div class="c-black2 fs-15 mt-2">
+                        نسيت كلمة المرور السابقة؟
+                        <span class="c-main ff-m cu-pointer" data-bs-target="#emailModal" data-bs-toggle="modal">ارسال رمز تحقق</span>
+                    </div>
+    
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Email Modal -->
+    <div class="modal fade" id="emailModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <form action="" class="w-100">
+
+                <div class="modal-header">
+                  <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+                </div>
+    
+                <div class="modal-body">
+                    <h3 class="modal-title">مرحبا بك في أكاديمية سنا العلم</h3>
+                    <p class="modal-text">نسيت كلمة المرور</p>
+        
+                    <div class="items">
+                        
+                        <div class="modal-item">
+                            <img src="./assets/imgs/icons/sms.png" alt="" class="img">
+                            <input type="email" placeholder="الرجاء إدخال البريد الإلكتروني" class="input-modal">
+                        </div>
+
+                    </div>
+    
+                </div>
+    
+                <div class="modal-footer">
+                    
+                    <button type="button" data-bs-target="#investigationModal" data-bs-toggle="modal" class="main-btn up login-btn w-100">تأكيد</button>
+    
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- investigation Modal -->
+    <div class="modal fade" id="investigationModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+            </div>
+
+            <div class="modal-body">
+                <h3 class="modal-title">مرحبا بك في أكاديمية سنا العلم</h3>
+                <p class="modal-text mb-2">تم ارسال رمز التحقق إلي بريدك الإلكتروني</p>
+    
+                <img src="./assets/imgs/icons/email_anm.gif" alt="" class="modal-img-body mx-auto">
+
+            </div>
+
+            <div class="modal-footer mt-2">
+                
+                <button type="button" data-bs-target="#codeModal" data-bs-toggle="modal" class="main-btn up login-btn w-100">إدخال رمز التحقق</button>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Code Modal -->
+    <div class="modal fade" id="codeModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <form action="" id="codeForm" class="w-100">
+
+                <div class="modal-header">
+                  <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+                </div>
+    
+                <div class="modal-body">
+                  <h3 class="modal-title">مرحبا بك في أكاديمية سنا العلم</h3>
+                  <p class="modal-text">رمز التفعيل</p>
+    
+                  <!-- Code Inputs -->
+                  <div class="code-container">
+                    <input type="number" class="code" min="0" max="9" required />
+                    <input type="number" class="code" min="0" max="9" required />
+                    <input type="number" class="code" min="0" max="9" required />
+                    <input type="number" class="code" min="0" max="9" required />
+
+                    <input type="hidden" class="all_code">
+                </div>
+    
+                </div>
+    
+                <div class="modal-footer">
+                    
+                  <button type="submit" data-bs-target="#PasswordModal" data-bs-toggle="modal" class="main-btn up login-btn w-100">تأكيد</button>
+
+                  <div class="d-flex-between w-100 mt-2">
+
+                      <div class="c-black2 fs-15">
+                        لم يصلك رمز التفعيل؟
+                        <button type="button" class="c-main ff-m cu-pointer bg-transparent new-code">رمز جديد</button>
+                      </div>
+
+                      <span class="counter c-main fs-15" data-count="60"></span>
+
+                  </div>
+    
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Password Modal -->
+    <div class="modal fade" id="PasswordModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <form action="" class="w-100">
+
+                <div class="modal-header">
+                  <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+                </div>
+    
+                <div class="modal-body">
+                    <h3 class="modal-title">تغيير كلمة المرور</h3>
+                    
+                    <div class="items">
+                        
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء تعيين كلمة مرور جديدة" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء تأكيد كلمة المرور" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+
+                    </div>
+    
+                </div>
+    
+                <div class="modal-footer">
+                    
+                    <button type="submit" class="main-btn up login-btn w-100">تأكيد</button>
+    
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </div>
+
+
 
     <!-- Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -919,12 +1152,17 @@
                 $(`.${activeTab}`).fadeIn();
                 $('.tabs-m').removeClass('active');
                 $(`[data-show=${activeTab}]`).addClass('active');
+
+                // if($('.tabs-m.active').parent('.multi-collapse')){
+                //     $('.multi-collapse').addClass('show');
+                // }
             } else{
                 $('.account').fadeIn(0);
             }
         }
     </script>
 
+    <!-- Collapse -->
     <script>
 
         if(sessionStorage.getItem("collapse")){
@@ -1034,6 +1272,88 @@
                 }
             }
         });
+    </script>
+
+
+    <!-- Code Modal -->
+    <script>
+        $(document).ready(function(){
+            let codes = document.querySelectorAll(".code");
+
+            $('#codeModal').on('shown.bs.modal', function () {
+                $(".code-container .code").first().focus()
+            });
+
+            codes.forEach((code, idx) => {
+                code.addEventListener("keydown", (e) => {
+                    if (e.key >= 0 && e.key <= 9) {
+                        codes[idx].value = "";
+                        if([idx + 1] < codes.length){
+                            setTimeout(() => codes[idx + 1].focus(), 10);
+                        }
+                    } else if (e.key === "Backspace") {
+                        if(idx > 0){
+                            setTimeout(() => codes[idx - 1].focus(), 10);
+                        }
+                    }
+                });
+            });
+
+            let arr = [];
+
+            $('#codeForm').on('submit', function(e){
+                e.preventDefault()
+                for(let i= 0; i < codes.length; i++){
+                    arr.push(codes[i].value);
+                }
+
+                let code = arr.join('')
+                $('.all_code').val(code);
+                arr = []
+
+            })
+
+        });
+    </script>
+
+    <!-- Counter -->
+    <script>
+
+        let counter;
+        function codeCounter(){
+
+            $('.counter').text('')
+            let num = $('.counter').data('count');
+
+            counter = setInterval(function (){
+                num--;
+                $('.counter').text(num);
+                if(num < 60){
+                    $('.counter').text(`${num} : 00`);
+                }
+
+                if(num > 60){
+                    $('.counter').text(`00 : ${num}`);
+                }
+
+                if(num < 10){
+                    $('.counter').text(`0${num} : 00`);
+                }
+
+                if(num == 0){
+                    clearInterval(counter);
+                }
+
+            }, 1000)
+
+        }
+
+        codeCounter()
+        
+        // $('.new-code').on('click', function () {
+        //     clearInterval(counter);
+        //     codeCounter()
+        // })
     </script>
 
     <!-- Main Js -->

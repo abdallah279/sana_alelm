@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./assets/plugins/select2/select2.min.css">
     <!-- fancybox -->
     <link rel="stylesheet" href="./assets/plugins/FancyBox/jquery.fancybox.min.css">
+    <!-- FlatPicker -->
+    <link rel="stylesheet" href="./assets/plugins/FlatPicker/flatpickr.css">
     <!-- Style Css -->
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -49,10 +51,10 @@
                         <span class="text">+966 123 456 789</span>
                     </a>
 
-                    <a href="#" class="item">
+                    <div class="item">
                         <img src="assets/imgs/icons/location.png" class="icon" alt="">
                         <span class="text">المملكة العربية السعودية</span>
-                    </a>
+                    </div>
 
                     <a href="mailto:abdallahzeko8@gmail.com" target="_blank" class="item">
                         <img src="assets/imgs/icons/sms.png" class="icon" alt="">
@@ -987,8 +989,8 @@
                     <div class="foot-content">
                         <h3 class="footer-head">أخرى</h3>
                         <div class="footer-links">
-                            <a href="#" class="link">طرق الدفع</a>
-                            <a href="#" class="link">الأحكام والشروط</a>
+                            <a href="profile.html" class="link" data-pass='payment'>طرق الدفع</a>
+                            <a href="profile.html" class="link" data-pass='conditions'>الأحكام والشروط</a>
                             <a href="#" class="link">الإشتراك</a>
                         </div>
                     </div>
@@ -1122,52 +1124,165 @@
                     <h3 class="modal-title">مرحبا بك في أكاديمية سنا العلم</h3>
                     <p class="modal-text">يرجي ملئ البيانات التالية لإنشاء حسابك</p>
                     
-                    <div class="user-photo-con mb-5">
-                        <div class="user-img">
-                            <div class="profile-img">
-                                <img src="assets/imgs/profile_img.png" class="img" alt="">
+
+                    <div class="step-one step">
+                        <div class="user-photo-con mb-5">
+                            <div class="user-img">
+                                <div class="profile-img">
+                                    <img src="assets/imgs/profile_img.png" class="img" alt="">
+                                </div>
+                                <input type="file" id="profileImg" class="hidden-input img-upload-input profile">
+                                <label for="profileImg" class="user-camera">
+                                    <img src="assets/imgs/icons/camera.png" alt="">
+                                </label>
                             </div>
-                            <input type="file" id="profileImg" class="hidden-input img-upload-input profile">
-                            <label for="profileImg" class="user-camera">
-                                <img src="assets/imgs/icons/camera.png" alt="">
-                            </label>
+                        </div>
+                        
+                        <div class="row gy-3 mb-4">
+                            
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label for="" class="main-label">الاسم الاول</label>
+                                    <input type="text" placeholder="ادخل الاسم الأول" class="input-me">
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label for="" class="main-label">الاسم الأخير</label>
+                                    <input type="text" placeholder="ادخل الاسم الأخير" class="input-me">
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label for="" class="main-label">البريد الإلكتروني</label>
+                                    <input type="email" placeholder="ادخل البريد الإلكتروني" class="input-me">
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label for="" class="main-label">رقم الجوال</label>
+                                    <input type="number" placeholder="ادخل رقم الجوال" class="input-me">
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <button type="button" class="main-btn up login-btn w-100" data-link="step-two">التالي</button>
+                    </div>
+
+                    <div class="step-two step">
+                        <div class="row gy-4 mb-4">
+    
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">الجامعة</label>
+                                    <select name="" id="" class="select">
+                                        <option value="">جامعة الملك فهد</option>
+                                        <option value="">جامعة القاهرة</option>
+                                        <option value="">جامعة المنصوره</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="main-label">الأقسام المفضلة</label>
+                                <div class="main-input">
+                                    <select name="" id="" class="select" multiple>
+                                        <option value="" selected>علوم الحاسب</option>
+                                        <option value="">الشبكات</option>
+                                    </select>
+                                    <i class="fa-solid fa-angle-down main-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">الوقت المفضل للدراسة</label>
+                                    <select name="" id="" class="select">
+                                        <option value="">من 9 مساءا إلي 12 مساءا</option>
+                                        <option value="">من 9 صباحا إلي 12 صباحا</option>
+                                        <option value="">من 9 مساءا إلي 12 مساءا</option>
+                                        <option value="">من 9 صباحا إلي 12 صباحا</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="buttons justify-content-center">
+                            <button type="button" class="main-btn up login-btn" data-link="step-three">إضافة بطاقة الدفع</button>
+                            <button type="button" class="main-btn up login-btn" data-bs-target="#regPasswordModal" data-bs-toggle="modal">تسجيل البطاقة لاحقا</button>
+                            <button type="button" class="main-btn up login-btn" data-link="step-one">السابق</button>
+                        </div>
+                    </div>
+
+                    <div class="step-three step">
+                        <div class="row gy-4 mb-4">
+    
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">نوع البطاقة</label>
+                                    <select name="" id="" class="select">
+                                        <option value="">Visa</option>
+                                        <option value="">مدى</option>
+                                        <option value="">Visa</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">رقم البطاقة</label>
+                                    <input type="number" placeholder="ادخل رقم البطاقة" class="input-me">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">الاسم</label>
+                                    <input type="number" placeholder="ادخل الاسم" class="input-me">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">العنوان</label>
+                                    <input type="number" placeholder="ادخل العنوان" class="input-me">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="main-input">
+                                    <label class="main-label">البلد</label>
+                                    <select name="" id="" class="select">
+                                        <option value="">المملكة العربية السعودية</option>
+                                        <option value="">مصر</option>
+                                        <option value="">قطر</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="main-label">تاريخ انتهاء الصلاحية</label>
+                                <div class="main-input">
+                                    <input type="text" placeholder="أدخل التاريخ" class="input-me date">
+                                    <i class="fa-solid fa-calendar-days main-icon"></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="buttons justify-content-center">
+                            <button type="button" class="main-btn up login-btn" data-bs-target="#codeRegModal" data-bs-toggle="modal">تسجيل</button>
+                            <button type="button" class="main-btn up login-btn" data-link="step-two">السابق</button>
                         </div>
                     </div>
                     
 
-                    <div class="row gy-3 mb-4">
-                        
-                        <div class="col-md-6">
-                            <div class="main-input">
-                                <label for="" class="main-label">الاسم الاول</label>
-                                <input type="text" placeholder="ادخل الاسم الأول" class="input-me">
-                            </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="main-input">
-                                <label for="" class="main-label">الاسم الأخير</label>
-                                <input type="text" placeholder="ادخل الاسم الأخير" class="input-me">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="main-input">
-                                <label for="" class="main-label">البريد الإلكتروني</label>
-                                <input type="email" placeholder="ادخل البريد الإلكتروني" class="input-me">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="main-input">
-                                <label for="" class="main-label">رقم الجوال</label>
-                                <input type="number" placeholder="ادخل رقم الجوال" class="input-me">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <button type="button" data-bs-target="#codeModal" data-bs-toggle="modal" class="main-btn up login-btn w-100">التالي</button>
                   
     
                   <div class="fs-15 ff-d text-center mt-3 c-main">أو</div>
@@ -1472,6 +1587,131 @@
         </div>
     </div>
 
+    <!-- Register Password Modal -->
+    <div class="modal fade" id="regPasswordModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <form action="" class="w-100">
+
+                <div class="modal-header">
+                  <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+                </div>
+    
+                <div class="modal-body">
+                    <h3 class="modal-title">مرحبا بك في أكاديمية سنا العلم</h3>
+                    <p class="modal-text">كلمة مرور جديدة</p>
+        
+                    <div class="items">
+
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء تعيين كلمة مرور جديدة" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+
+                        <div class="modal-item main-input">
+                            <img src="./assets/imgs/icons/lock.png" alt="" class="img">
+                            <input type="password" placeholder="الرجاء تأكيد كلمة المرور" class="input-modal">
+                            <div class="main-icon search-ic pass-icon">
+                                <img src="./assets/imgs/icons/eye.png" alt="" class="ic">
+                            </div>
+                        </div>
+
+                    </div>
+    
+                </div>
+    
+                <div class="modal-footer">
+                    
+                    <button type="button" data-bs-target="#codeRegModal" data-bs-toggle="modal" class="main-btn up login-btn w-100">تأكيد</button>
+    
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Code Reg Modal -->
+    <div class="modal fade" id="codeRegModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <form action="" id="codeForm" class="w-100">
+
+                <div class="modal-header">
+                  <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+                </div>
+    
+                <div class="modal-body">
+                  <h3 class="modal-title">مرحبا بك في أكاديمية سنا العلم</h3>
+                  <p class="modal-text">رمز التفعيل</p>
+    
+                  <!-- Code Inputs -->
+                  <div class="code-container">
+                    <input type="number" class="code" min="0" max="9" required />
+                    <input type="number" class="code" min="0" max="9" required />
+                    <input type="number" class="code" min="0" max="9" required />
+                    <input type="number" class="code" min="0" max="9" required />
+
+                    <input type="hidden" class="all_code">
+                </div>
+    
+                </div>
+    
+                <div class="modal-footer">
+                    
+                  <button type="submit" data-bs-target="#registerDoneModal" data-bs-toggle="modal" class="main-btn up login-btn w-100">تأكيد</button>
+
+                  <div class="d-flex-between w-100 mt-2">
+
+                      <div class="c-black2 fs-15">
+                        لم يصلك رمز التفعيل؟
+                        <button type="button" class="c-main ff-m cu-pointer bg-transparent new-code">رمز جديد</button>
+                      </div>
+
+                      <span class="counter c-main fs-15" data-count="60"></span>
+
+                  </div>
+    
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </div>
+
+
+    <!-- register Done Modal -->
+    <div class="modal fade" id="registerDoneModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <img src="./assets/imgs/logo.png" alt="" class="modal-img">
+            </div>
+
+            <div class="modal-body">
+                <h3 class="modal-title mb-2">مرحبا بك في أكاديمية سنا العلم</h3>
+                <h3 class="modal-title mb-2">تم إنشاء حسابك بنجاح</h3>
+    
+                <img src="./assets/imgs/icons/right_anm.gif" alt="" class="modal-img-body mx-auto">
+            </div>
+
+            <div class="modal-footer mt-2">
+                <a href="index.html" class="main-btn up login-btn w-100">الرئيسية</a>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
 
     <!-- Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1483,6 +1723,8 @@
     <script src="./assets/plugins/select2/select2.js"></script>
     <!-- fancybox -->
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
+    <!-- FlatPicker -->
+    <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
 
     <!-- Carousel -->
     <script>
@@ -1682,6 +1924,30 @@
                 }
             }
         });
+    </script>
+
+    <!-- FlatPicker -->
+    <script>
+        $(".date").flatpickr({
+            disableMobile: "true"
+        });
+    </script>
+
+    <script>
+        $('.step:not(:first)').hide();
+
+        $('[data-link]').on('click', function (e) { 
+            e.preventDefault();
+            let link = $(this).data('link');
+            $('.step').hide();
+            $(`.${link}`).fadeIn()
+         })
+    </script>
+
+    <script>
+        setTimeout(function(){
+            $('#registerDoneModal').modal('hide')
+        }, 4000);
     </script>
 
     <!-- Main Js -->
