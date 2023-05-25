@@ -390,6 +390,12 @@ input:focus {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .shadow-sm-0 {
+    box-shadow: unset;
+  }
+}
+
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -407,6 +413,31 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 36px 30px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
+  gap: 48px 40px;
+}
+@media screen and (max-width: 992px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap: 24px 20px;
+  }
+}
+.grid-2.g-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px 20px;
 }
 
 .d-flex-c {
@@ -980,6 +1011,10 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
   color: #202020 !important;
 }
 
+.c-dark {
+  color: #060042 !important;
+}
+
 .c-black2 {
   color: #000;
 }
@@ -998,6 +1033,14 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
 
 .bg-light {
   background-color: #F6F6F8;
+}
+
+.bb {
+  border-bottom: 1px solid rgba(32, 32, 32, 0.1);
+}
+
+.bl {
+  border-left: 1px solid rgba(32, 32, 32, 0.1);
 }
 
 .w-100 {
@@ -2427,8 +2470,18 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
   background-color: #fff;
   color: #202020;
 }
+@media screen and (max-width: 992px) {
+  .accordion-item .accordion-button {
+    align-items: start;
+  }
+}
 .accordion-item .accordion-body {
   padding: 20px 35px 5px;
+}
+@media screen and (max-width: 992px) {
+  .accordion-item .accordion-body {
+    padding: 20px 5px 5px;
+  }
 }
 .accordion-item .accordion-body .acc-item {
   margin-bottom: 10px;
@@ -2453,6 +2506,18 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 992px) {
+  .acc-item .right {
+    align-items: start;
+  }
+}
+@media screen and (max-width: 425px) {
+  .acc-item .right {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
 .acc-item .right .first .name {
   font-size: 16px;
   color: #202020;
@@ -2460,9 +2525,20 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
   display: block;
   font-family: fontDemi;
 }
+@media screen and (max-width: 768px) {
+  .acc-item .right .first .name {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
 .acc-item .right .first .info {
   font-size: 15px;
   color: #202020;
+}
+@media screen and (max-width: 768px) {
+  .acc-item .right .first .info {
+    font-size: 14px;
+  }
 }
 .acc-item .right .price {
   font-size: 14px;
@@ -2474,6 +2550,11 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .acc-item .right .price {
+    min-width: 54px;
+  }
 }
 .acc-item .left .show-anchor {
   background-color: transparent;
@@ -3440,6 +3521,9 @@ html[lang=ar] .filter.sm .filter-select .select ~ .select2 .select2-selection--s
   height: 200px;
   flex-grow: 1;
 }
+.courses-cards.material-cards .course-card .img.sm {
+  height: 180px;
+}
 .courses-cards.material-cards .course-card .course-content {
   padding: 0;
   flex-grow: 1;
@@ -3477,6 +3561,41 @@ html[lang=ar] .filter.sm .filter-select .select ~ .select2 .select2-selection--s
 }
 .courses-cards.material-cards .course-card:hover .course-img {
   transform: unset;
+}
+.courses-cards.material-cards .card-border {
+  padding: 25px;
+  border-bottom: 1px solid rgba(32, 32, 32, 0.1);
+}
+html[lang=en] .courses-cards.material-cards .card-border {
+  border-right: 1px solid rgba(32, 32, 32, 0.1);
+  padding-left: 0;
+}
+html[lang=ar] .courses-cards.material-cards .card-border {
+  padding-right: 0;
+  border-left: 1px solid rgba(32, 32, 32, 0.1);
+}
+.courses-cards.material-cards .card-border:nth-child(even) {
+  border-left: none;
+  border-right: none;
+  padding: 25px;
+}
+html[lang=en] .courses-cards.material-cards .card-border:nth-child(even) {
+  border-right: none;
+  border-left: none;
+  padding-right: 0;
+  padding-left: 25px;
+}
+html[lang=ar] .courses-cards.material-cards .card-border:nth-child(even) {
+  border-right: none;
+  border-left: none;
+  padding-left: 0;
+  padding-right: 25px;
+}
+@media screen and (max-width: 768px) {
+  .courses-cards.material-cards .card-border {
+    padding: 20px 10px !important;
+    border: none !important;
+  }
 }
 
 .partners-carousel {
@@ -4060,15 +4179,13 @@ html[lang=ar] .sidebar {
     height: 100px;
   }
 }
-.teacher-section .content .information {
-  width: 100%;
-}
 .teacher-section .content .information .top {
   display: flex;
   align-items: end;
   justify-content: space-between;
   border-bottom: 1px solid rgba(32, 32, 32, 0.2);
   padding-bottom: 20px;
+  width: 100%;
 }
 @media screen and (max-width: 576px) {
   .teacher-section .content .information .top {
@@ -4174,6 +4291,14 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   color: #202020;
   line-height: 1.6;
 }
+.teacher-section.sm .content .teacher-img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+.teacher-section.sm .content .information {
+  width: 100%;
+}
 
 .students-carousel .item {
   padding: 25px 20px 20px;
@@ -4238,7 +4363,7 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
 }
 @media screen and (max-width: 768px) {
   .course-page-img {
-    height: 220px;
+    height: 220px !important;
   }
 }
 .course-page-img .img {
@@ -4442,6 +4567,11 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   justify-content: space-between;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 425px) {
+  .file-item {
+    padding: 12px;
+  }
+}
 .file-item:last-child {
   margin-bottom: 0;
 }
@@ -4454,6 +4584,11 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   font-size: 15px;
   color: #202020;
   font-family: fontDemi;
+}
+@media screen and (max-width: 425px) {
+  .file-item .right .file-name {
+    font-size: 14px;
+  }
 }
 .file-item .right .file-ic {
   max-width: 20px;

@@ -163,6 +163,12 @@
   }
 }
 
+.shadow-sm-0{
+  @media screen and (max-width:$screen-sm) {
+    box-shadow: unset;
+  }
+}
+
 .grid-4{
   @include grid(250px, 45px);
 
@@ -173,6 +179,22 @@
 
 .grid-3{
   @include grid(310px, 30px);
+}
+
+.grid-2{
+  @include grid(435px, 40px);
+
+  @media screen and (max-width:$screen-lg) {
+    @include grid(260px, 20px);
+  }
+
+  @media screen and (max-width:$screen-sm) {
+    @include grid(275px, 20px);
+  }
+
+  &.g-4{
+    @include grid(300px, 20px);
+  }
 }
 
 .d-flex-c{
@@ -775,6 +797,10 @@
   color: $black !important;
 }
 
+.c-dark{
+  color: $dark !important;
+}
+
 .c-black2{
   color: $black2;
 }
@@ -793,6 +819,14 @@
 
 .bg-light{
   background-color: $light;
+}
+
+.bb{
+  border-bottom: 1px solid rgba($color: $black, $alpha: .1);
+}
+
+.bl{
+  border-left: 1px solid rgba($color: $black, $alpha: .1);
 }
 
 .w-100{
@@ -2320,11 +2354,19 @@
       background-color: $white;
       color: $black;
     }
+
+    @media screen and (max-width:$screen-lg) {
+      align-items: start;
+    }
   }
 
   .accordion-body{
     padding: 20px 35px 5px;
     // background-color: #faf9f9;
+    
+    @media screen and (max-width:$screen-lg) {
+      padding: 20px 5px 5px;
+    }
 
     .acc-item{
       margin-bottom: 10px;
@@ -2353,6 +2395,15 @@
 
   .right{
     @include between;
+    @media screen and (max-width:$screen-lg) {
+      align-items: start;
+    }
+
+    @media screen and (max-width:$screen-xs) {
+      align-items: start;
+      flex-direction: column;
+      gap: 12px;
+    }
 
     .first{
       .name{
@@ -2361,11 +2412,19 @@
         margin-bottom: 8px;
         display: block;
         font-family: fontDemi;
+
+        @media screen and (max-width:$screen-md) {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
       }
 
       .info{
         font-size: 15px;
         color: $black;
+        @media screen and (max-width:$screen-md) {
+          font-size: 14px;
+        }
       }
     }
 
@@ -2377,6 +2436,10 @@
       padding: 6px 10px;
       border-radius: 5px;
       @include center;
+      
+      @media screen and (max-width:$screen-md) {
+        min-width: 54px;
+      }
     }
   }
 
