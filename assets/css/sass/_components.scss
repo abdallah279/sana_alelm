@@ -994,6 +994,11 @@
   border: 3px solid $white;
   box-shadow: $img-shadow;
   object-fit: cover;
+  transition: $main-transition;
+  
+  &.lg{
+    @include circle(100px);
+  }
 }
 
 .main-imgs{
@@ -1811,7 +1816,14 @@
   top: 0;
   @include dir-right(0);
   cursor: pointer;
-  text-decoration: underline
+  text-decoration: underline;
+
+
+  @media screen and (max-width:$screen-sm) {
+    position: unset;
+    margin: 15px;
+    display: block;
+  }
 }
 
 /********************* Code Modal *********************/

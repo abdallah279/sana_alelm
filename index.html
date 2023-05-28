@@ -857,6 +857,126 @@
     <!-- End Material Section -->
 
 
+    <!-- Start Student Slider -->
+    <div class="student-sec sec-padding">
+        <div class="container">
+            <h3 class="color-title text-center mb-4"><span class="c-main">راي</span> طلابنا في سنا العلم</h3>
+
+            <div class="student">
+                <div class="main-imgs">
+                    <img src="./assets/imgs/team-1.jpg" class="main-img" alt="">
+                    <img src="./assets/imgs/team-2.jpg" class="main-img" alt="">
+                    <img src="./assets/imgs/team-4.jpg" class="main-img" alt="">
+                </div>
+
+                <h5 class="num">+20 ألف</h5>
+                <p class="text">طالب مسجل بدوراتنا</p>
+            </div>
+
+            <div class="slider-img">
+            
+                <div class="box active">
+                    <img src="./assets/imgs/team-1.jpg" alt="" class="main-img lg">
+                </div>
+                
+                <div class="box">
+                    <img src="./assets/imgs/team-2.jpg" alt="" class="main-img lg">
+                </div>
+                
+                <div class="box">
+                    <img src="./assets/imgs/team-4.jpg" alt="" class="main-img lg">
+                </div>
+                
+                <div class="box">
+                    <img src="./assets/imgs/profile.jpg" alt="" class="main-img lg">
+                </div>
+                
+                <div class="box">
+                    <img src="./assets/imgs/teacher.png" alt="" class="main-img lg">
+                </div>
+                
+                <div class="box">
+                    <img src="./assets/imgs/team-3.png" alt="" class="main-img lg">
+                </div>
+                
+                <div class="box">
+                    <img src="./assets/imgs/team-5.jpg" alt="" class="main-img lg">
+                </div>
+    
+            </div>
+
+            <div class="owl-carousel qoute-carousel">
+                
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+                <div class="qoute">
+                    <img src="./assets/imgs/quote-up-square.png" alt="" class="top-ic ic">
+                    <div class="text">
+                        منصة سنا العلم من أفضل المنصات التي
+                        أفادتني في دراستي بالجامعة
+                    </div>
+                    <img src="./assets/imgs/quote-down-square.png" alt="" class="bottom-ic ic">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- End Student Slider -->
+
+
     <!-- Start Slider Section -->
     <section class="slider-section main-padding">
         <div class="container">
@@ -1248,9 +1368,39 @@
                             </div>
 
                             <div class="col-md-6">
-                                <div class="main-input">
-                                    <label class="main-label">العنوان</label>
-                                    <input type="number" placeholder="ادخل العنوان" class="input-me">
+                                <label class="main-label">العنوان</label>
+                                <div class="main-input mb-3 map-inp">
+                                    <input
+                                        type="text"
+                                        class="input-me"
+                                        name="address"
+                                        readonly
+                                        id="address"
+                                        placeholder="يرجي تحديد العنوان علي الخريطة"
+                                    />
+                                    <i class="fa-solid fa-location-dot main-icon"></i>
+
+                                    <input type="hidden" name="lat" id="lat" value="30" />
+                                    <input type="hidden" name="lng" id="lng" value="30" />
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-12 mt-0">
+                                <div class="container-map">
+    
+                                  <div class="main-input mb-2">
+                                    <input
+                                      type="text"
+                                      class="input-me"
+                                      name="address2"
+                                      id="address2"
+                                      placeholder="ابحث هنا"
+                                    />
+                                  </div>
+    
+                                  <div id="map" style="width: 100%; height: 300px" ></div>
+    
                                 </div>
                             </div>
 
@@ -1725,6 +1875,8 @@
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
+    <!-- Map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn3NtsJ5lgHSIxUJ4AuqAMm2RXldDDjN8&libraries=places&language=ar" ></script>
 
     <!-- Carousel -->
     <script>
@@ -1933,6 +2085,7 @@
         });
     </script>
 
+    <!-- Register Steps -->
     <script>
         $('.step:not(:first)').hide();
 
@@ -1944,10 +2097,164 @@
          })
     </script>
 
+    <!-- Qoute Slider -->
     <script>
-        setTimeout(function(){
-            $('#registerDoneModal').modal('hide')
-        }, 4000);
+        $(document).ready(function(){
+            let isRtl3 = $('html[lang="ar"]').length > 0;
+            $(".qoute-carousel").owlCarousel({
+                items:1,
+                rtl: isRtl3 ? true : false,
+                margin: 20,
+                dots: true,
+                autoplay: false,
+                autoplaySpeed: 2800,
+                onDragged: callback
+            });
+
+            $('.box').on('click', function(){
+                let position = $(this).position();
+    
+                let top = position.top;
+                let left = position.left;
+                
+                $('.box.active').css({
+                    'top': top,
+                    'left': left,
+                });
+                $('.box').removeClass('active');
+                
+                $(this).addClass('active');
+                let currentIndex = $(this).index();
+                $(".qoute-carousel").trigger("to.owl.carousel", [currentIndex, 300]);
+            })
+
+            function callback(event) {
+                $('.box').each(function (i) { 
+                    if(i === event.item.index){
+                        $(this).click();
+                    }
+                });
+            }
+            
+            $('.qoute-carousel .owl-dots .owl-dot').on('click', function(){
+                
+                let currentIndexDot = $(this).index();
+                $('.box').each(function (i) { 
+                    if(i === currentIndexDot){
+                        $(this).click();
+                    }
+                });
+    
+            })
+
+        });
+    </script>
+
+
+    <!--init map-->
+    <script>
+        var map;
+        var marker;
+        var lat = document.getElementById("lat");
+        var lng = document.getElementById("lng");
+        var address = document.getElementById("address");
+        var address2 = document.getElementById("address2");
+        var geocoder = new google.maps.Geocoder();
+        var infowindow = new google.maps.InfoWindow();
+
+        function initMap() {
+        var myLatlng = new google.maps.LatLng(lat.value, lng.value);
+        var mapOptions = {
+            zoom: 10,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        marker = new google.maps.Marker({
+            map: map,
+            position: myLatlng,
+            draggable: true,
+        });
+
+        geocoder.geocode({ latLng: myLatlng }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                address.value = results[0].formatted_address;
+                lat.value = marker.getPosition().lat();
+                lng.value = marker.getPosition().lng();
+                infowindow.setContent(results[0].formatted_address);
+                infowindow.open(map, marker);
+            }
+            }
+        });
+
+        google.maps.event.addListener(marker, "dragend", function () {
+            geocoder.geocode(
+            { latLng: marker.getPosition() },
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    address.value = results[0].formatted_address;
+                    lat.value = marker.getPosition().lat();
+                    lng.value = marker.getPosition().lng();
+                    infowindow.setContent(results[0].formatted_address);
+                    infowindow.open(map, marker);
+                }
+                }
+            }
+            );
+        });
+        }
+
+        function initialize() {
+        var input = document.getElementById("address2");
+        var autocomplete = new google.maps.places.Autocomplete(
+            /** @type {HTMLInputElement} */ (input),
+            {
+            types: ["(cities)"],
+            }
+        );
+        google.maps.event.addListener(
+            autocomplete,
+            "place_changed",
+            function () {
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+            lat.value = place.geometry.location.lat();
+            lng.value = place.geometry.location.lng();
+            // initMap();
+            var address = "";
+            if (place.address_components) {
+                address = [
+                (place.address_components[0] &&
+                    place.address_components[0].short_name) ||
+                    "",
+                (place.address_components[1] &&
+                    place.address_components[1].short_name) ||
+                    "",
+                (place.address_components[2] &&
+                    place.address_components[2].short_name) ||
+                    "",
+                ].join(" ");
+            }
+            initMap();
+            }
+        );
+        }
+
+        google.maps.event.addDomListener(window, "load", initialize);
+
+        google.maps.event.addDomListener(window, "load", initMap);
+
+        // show and hide map
+        let mapbtn = document.querySelector(".map-inp");
+        $(".container-map").hide();
+        mapbtn.addEventListener("click", function () {
+        $(".container-map").slideToggle();
+        });
     </script>
 
     <!-- Main Js -->

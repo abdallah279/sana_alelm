@@ -447,8 +447,7 @@
     
                                 <div class="item mb-5">
 
-                                    <span class="edit-pass" data-bs-toggle="modal" data-bs-target="#newPasswordModal">تعديل كلمة المرور</span>
-    
+                                    
                                     <h2 class="section-title mb-5">البيانات الشخصية</h2>
                                     
                                     <div class="user-photo-con mb-4">
@@ -462,6 +461,7 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <span class="edit-pass" data-bs-toggle="modal" data-bs-target="#newPasswordModal">تعديل كلمة المرور</span>
                                     
                                     <div class="row gy-3">
         
@@ -570,9 +570,39 @@
                                         </div>
         
                                         <div class="col-md-6">
-                                            <div class="main-input">
-                                                <label class="main-label">العنوان</label>
-                                                <input type="number" placeholder="ادخل العنوان" class="input-me">
+                                            <label class="main-label">العنوان</label>
+                                            <div class="main-input mb-3 map-inp">
+                                                <input
+                                                    type="text"
+                                                    class="input-me"
+                                                    name="address"
+                                                    readonly
+                                                    id="address"
+                                                    placeholder="يرجي تحديد العنوان علي الخريطة"
+                                                />
+                                                <i class="fa-solid fa-location-dot main-icon"></i>
+            
+                                                <input type="hidden" name="lat" id="lat" value="30" />
+                                                <input type="hidden" name="lng" id="lng" value="30" />
+                                            </div>
+            
+                                        </div>
+                                        
+                                        <div class="col-12 mt-0">
+                                            <div class="container-map">
+                
+                                              <div class="main-input mb-2">
+                                                <input
+                                                  type="text"
+                                                  class="input-me"
+                                                  name="address2"
+                                                  id="address2"
+                                                  placeholder="ابحث هنا"
+                                                />
+                                              </div>
+                
+                                              <div id="map" style="width: 100%; height: 300px" ></div>
+                
                                             </div>
                                         </div>
     
@@ -1104,6 +1134,8 @@
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
+    <!-- Map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn3NtsJ5lgHSIxUJ4AuqAMm2RXldDDjN8&libraries=places&language=ar" ></script>
 
     <!-- Tabs -->
     <script>
@@ -1354,6 +1386,112 @@
         //     clearInterval(counter);
         //     codeCounter()
         // })
+    </script>
+
+    <!--init map-->
+    <script>
+        var map;
+        var marker;
+        var lat = document.getElementById("lat");
+        var lng = document.getElementById("lng");
+        var address = document.getElementById("address");
+        var address2 = document.getElementById("address2");
+        var geocoder = new google.maps.Geocoder();
+        var infowindow = new google.maps.InfoWindow();
+
+        function initMap() {
+        var myLatlng = new google.maps.LatLng(lat.value, lng.value);
+        var mapOptions = {
+            zoom: 10,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        marker = new google.maps.Marker({
+            map: map,
+            position: myLatlng,
+            draggable: true,
+        });
+
+        geocoder.geocode({ latLng: myLatlng }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                address.value = results[0].formatted_address;
+                lat.value = marker.getPosition().lat();
+                lng.value = marker.getPosition().lng();
+                infowindow.setContent(results[0].formatted_address);
+                infowindow.open(map, marker);
+            }
+            }
+        });
+
+        google.maps.event.addListener(marker, "dragend", function () {
+            geocoder.geocode(
+            { latLng: marker.getPosition() },
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    address.value = results[0].formatted_address;
+                    lat.value = marker.getPosition().lat();
+                    lng.value = marker.getPosition().lng();
+                    infowindow.setContent(results[0].formatted_address);
+                    infowindow.open(map, marker);
+                }
+                }
+            }
+            );
+        });
+        }
+
+        function initialize() {
+        var input = document.getElementById("address2");
+        var autocomplete = new google.maps.places.Autocomplete(
+            /** @type {HTMLInputElement} */ (input),
+            {
+            types: ["(cities)"],
+            }
+        );
+        google.maps.event.addListener(
+            autocomplete,
+            "place_changed",
+            function () {
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+            lat.value = place.geometry.location.lat();
+            lng.value = place.geometry.location.lng();
+            // initMap();
+            var address = "";
+            if (place.address_components) {
+                address = [
+                (place.address_components[0] &&
+                    place.address_components[0].short_name) ||
+                    "",
+                (place.address_components[1] &&
+                    place.address_components[1].short_name) ||
+                    "",
+                (place.address_components[2] &&
+                    place.address_components[2].short_name) ||
+                    "",
+                ].join(" ");
+            }
+            initMap();
+            }
+        );
+        }
+
+        google.maps.event.addDomListener(window, "load", initialize);
+
+        google.maps.event.addDomListener(window, "load", initMap);
+
+        // show and hide map
+        let mapbtn = document.querySelector(".map-inp");
+        $(".container-map").hide();
+        mapbtn.addEventListener("click", function () {
+            $(".container-map").slideToggle();
+        });
     </script>
 
     <!-- Main Js -->
