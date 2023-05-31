@@ -859,7 +859,6 @@ html[lang=ar] .iti--allow-dropdown .iti__flag-container, html[lang=ar] .iti--sep
 .up:focus {
   box-shadow: inset 0 -4.25em 0 0 #fff;
   color: #8BA78D !important;
-  /* transform: translateY(-4px); */
 }
 
 .main-btn {
@@ -1868,7 +1867,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 }
 .user-img .user-camera {
   position: absolute;
-  bottom: -8px;
+  bottom: -5px;
   border-radius: 50%;
   width: 26px;
   height: 26px;
@@ -1879,10 +1878,10 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
   background-color: #8BA78D;
 }
 html[lang=en] .user-img .user-camera {
-  right: 8px;
+  right: 9px;
 }
 html[lang=ar] .user-img .user-camera {
-  left: 8px;
+  left: 9px;
 }
 .user-img .user-camera img {
   max-width: 15px;
@@ -2685,16 +2684,20 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
     display: block;
   }
 }
+.page-header .header-content .profile-con {
+  gap: 18px;
+}
 @media screen and (max-width: 576px) {
-  .page-header .header-content .profile {
+  .page-header .header-content .profile-con {
     flex: 1;
     display: flex;
     justify-content: end;
+    gap: 7px;
   }
-  html[lang=en] .page-header .header-content .profile {
+  html[lang=en] .page-header .header-content .profile-con {
     margin-right: 10px;
   }
-  html[lang=ar] .page-header .header-content .profile {
+  html[lang=ar] .page-header .header-content .profile-con {
     margin-left: 10px;
   }
 }
@@ -3609,6 +3612,31 @@ html[lang=ar] .courses-cards.material-cards .card-border:nth-child(even) {
     padding: 20px 10px !important;
     border: none !important;
   }
+}
+.courses-cards.card-with-btn .course-card {
+  position: relative;
+}
+.courses-cards.card-with-btn .course-card .course-content {
+  position: unset;
+}
+.courses-cards.card-with-btn .course-card .course-content .course-footer {
+  display: block;
+}
+.courses-cards.card-with-btn .course-card .course-content .course-footer .course-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.courses-cards.card-with-btn .main-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  opacity: 0;
 }
 
 .partners-carousel {
@@ -4668,6 +4696,11 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
     left: calc(100% - 74px);
   }
 }
+@media screen and (max-width: 375px) {
+  .slider-img .box:nth-child(2) {
+    top: 0px;
+  }
+}
 .slider-img .box:nth-child(3) {
   top: -50px;
   left: 50px;
@@ -4683,12 +4716,18 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
     left: 15px;
   }
 }
+@media screen and (max-width: 375px) {
+  .slider-img .box:nth-child(3) {
+    top: 0px;
+  }
+}
 .slider-img .box:nth-child(4) {
   top: -20px;
   left: 240px;
 }
 @media screen and (max-width: 992px) {
   .slider-img .box:nth-child(4) {
+    top: 10px;
     left: 120px;
   }
 }
@@ -4698,12 +4737,19 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
     left: 50px;
   }
 }
+@media screen and (max-width: 375px) {
+  .slider-img .box:nth-child(4) {
+    top: 80px;
+    left: 0;
+  }
+}
 .slider-img .box:nth-child(5) {
   top: -20px;
   left: calc(100% - 330px);
 }
 @media screen and (max-width: 992px) {
   .slider-img .box:nth-child(5) {
+    top: 10px;
     left: calc(100% - 195px);
   }
 }
@@ -4711,6 +4757,12 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   .slider-img .box:nth-child(5) {
     top: 42px;
     left: calc(100% - 120px);
+  }
+}
+@media screen and (max-width: 375px) {
+  .slider-img .box:nth-child(5) {
+    top: 80px;
+    left: calc(100% - 60px);
   }
 }
 .slider-img .box:nth-child(6) {
@@ -4729,6 +4781,11 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
     left: 50px;
   }
 }
+@media screen and (max-width: 375px) {
+  .slider-img .box:nth-child(6) {
+    top: 160px;
+  }
+}
 .slider-img .box:nth-child(7) {
   top: 100px;
   left: calc(100% - 200px);
@@ -4743,6 +4800,11 @@ html[lang=ar] .teacher-section .content .information .top .left .item::after {
   .slider-img .box:nth-child(7) {
     top: 140px;
     left: calc(100% - 110px);
+  }
+}
+@media screen and (max-width: 375px) {
+  .slider-img .box:nth-child(7) {
+    top: 160px;
   }
 }
 .slider-img .box.active {

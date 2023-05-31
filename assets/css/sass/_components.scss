@@ -628,12 +628,35 @@
 
 
 /********************* Buttons *********************/
+// .up{
+//   position: relative;
+//   overflow: hidden;
+//   z-index: 1;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     z-index: -1;
+//     background: $white;
+//     height: 200%;
+//     width: 250%;
+//     border-radius: 50%;
+//     top: 100%;
+//     left: 100%;
+//     transition: all .5s ease;
+//    }
+// }
+
 .up:hover,
 .up:focus {
   -webkit-box-shadow: inset 0 -4.25em 0 0 var(#fff);
   box-shadow: inset 0 -4.25em 0 0 #fff;
   color: $main !important;
-  /* transform: translateY(-4px); */
+
+  // &::before {
+  //   top: -20px;
+  //   left: -20px;
+  //  }
 }
 
 // Main Button
@@ -1709,8 +1732,8 @@
 
   .user-camera{
     position: absolute;
-    bottom: -8px;
-    @include dir-right(8px);
+    bottom: -5px;
+    @include dir-right(9px);
     @include circle(26px);
     @include center;
     cursor: pointer;

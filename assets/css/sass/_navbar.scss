@@ -101,12 +101,14 @@
             }
         }
 
-        .profile{
+        .profile-con{
+            gap: 18px;
             @media screen and (max-width:$screen-sm) {
                 flex: 1;
                 display: flex;
                 justify-content: end;
-                @include dir-margin-right(10px)
+                @include dir-margin-right(10px);
+                gap: 7px;
             }
         }
     }
