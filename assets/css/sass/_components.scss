@@ -141,6 +141,22 @@
   background-color: transparent;
 }
 
+.w-xxs-100{
+  
+  @media screen and (max-width:$screen-sm) {
+    min-width: 170px !important;
+  }
+  
+  @media screen and (max-width:$screen-xs) {
+    min-width: 145px !important;
+  }
+
+  @media screen and (max-width:360px) {
+    width: 100% !important;
+  }
+
+}
+
 .shadow{
   box-shadow: 0 .1rem 1rem rgba($black2,.1)!important;
 }
@@ -183,19 +199,28 @@
 
 .grid-2{
   @include grid(435px, 40px);
-
+  
   @media screen and (max-width:$screen-lg) {
     @include grid(260px, 20px);
   }
-
+  
   @media screen and (max-width:$screen-sm) {
     @include grid(275px, 20px);
   }
-
+  
   &.g-4{
     @include grid(300px, 20px);
   }
 }
+
+.grid-p{
+  @include grid(250px, 45px);
+}
+
+.grid-s{
+  @include grid(240px, 20px);
+}
+
 
 .d-flex-c{
   display: flex;
@@ -214,6 +239,10 @@
 
 .pl-25{
   @include dir-padding-right(25px !important)
+}
+
+.ml-25{
+  @include dir-margin-right(25px !important)
 }
 
 .done{
@@ -814,6 +843,20 @@
   }
 }
 
+.sm-btn{
+  background-color: $main;
+  font-size: 15px;
+  // pointer-events: none;
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 45px;
+  cursor: pointer;
+  color: $white;
+  @include center;
+  border-radius: 6px;
+}
+
 /********************* Colors *********************/
 
 .c-black{
@@ -856,8 +899,16 @@
   width: 100%;
 }
 
+.w-space-normal{
+  white-space: normal !important;
+}
+
 .cu-pointer{
   cursor: pointer;
+}
+
+.not-pointer{
+  cursor: auto !important;
 }
 
 .main-bb{
@@ -953,7 +1004,11 @@
 }
 
 .main-border{
-  border: 1px solid $border-color;
+  border: 1px solid $main;
+}
+
+.main-border-b{
+  border-bottom: 1px solid $main;
 }
 
 .main-padding{
@@ -1152,16 +1207,19 @@
     font-size: 17px;
     color: $sec;
   }
+
+  &.lg{
+    gap: 5px;
+    .star{
+      font-size: 19px;
+    }
+  }
 }
-
-
-
-
 
 
 /********************* Inputs *********************/
 .input-g{
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: block;
 }
 
@@ -1169,7 +1227,7 @@
   margin-bottom: 12px;
   font-size: 15px;
   // font-family: fontDemi;
-  color: $black;
+  color: $black2;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1240,6 +1298,10 @@
       &.sm{
         height: 90px;
       }
+
+      &.lg{
+        height: 230px;
+      }
     }
   }
 
@@ -1286,6 +1348,23 @@
         opacity: 1;
       }
     }
+
+  }
+
+  .sec-icon{
+    position: absolute;
+    top: 0;
+    @include dir-right(0);
+    background-color: $main;
+    font-size: 15px;
+    // pointer-events: none;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 100%;
+    color: $white;
+    @include center;
+    border-radius: 6px;
   }
 
 
@@ -1334,7 +1413,7 @@
 
       
       .select2-selection__rendered {
-        color: $dark;
+        color: $black;
         font-size: 14px;
         display: flex;
         flex-wrap: wrap;
@@ -1455,6 +1534,10 @@
     opacity: .8;
   }
 
+}
+
+.select2-results__options{
+  max-height: 220px !important;
 }
 
 .select2-results__options::-webkit-scrollbar {
@@ -1758,17 +1841,19 @@
 }
 
 .file-con{
-  border: 1px solid $main;
+  // border: 1px solid $main;
   border-radius: 5px;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: $main;
+  color: $dark;
   padding: 8px 12px;
   font-size: 14px;
-  margin-top: 10px;
+  // margin-top: 10px;
   width: fit-content;
   cursor: pointer;
+  background-color: $border-color;
+  position: relative;
 
   .close{
     color: $black;
@@ -1809,16 +1894,25 @@
 
 }
 
+
 .remove-img{
   position:absolute;
-  top: -5px;
-  @include dir-right(-5px);
-  @include circle(15px);
-  background-color: $red;
+  top: 15px;
+  @include dir-right(15px);
+  // @include circle(15px);
+  // width: 12px;
+  // height: 12px;
+  color: $red;
   color: #fff;
-  font-size: 12px;
+  background-color: transparent;
+  font-size: 17px;
   @include center;
   cursor: pointer;
+
+  img{
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .img-upload-show{
@@ -1836,8 +1930,8 @@
   font-size: 16px;
   color: $main;
   position: absolute;
-  top: 0;
-  @include dir-right(0);
+  top: 14px;
+  @include dir-right(14px);
   cursor: pointer;
   text-decoration: underline;
 
@@ -2024,13 +2118,18 @@
       }
 
       .modal-img{
-        max-width: 95px;
-        max-height: 130px;
+        max-width: 90px;
+        max-height: 110px;
         margin: auto;
         
         &.lg{
           width: 190px;
           height: 85px;
+        }
+
+        @media screen and (max-width:$screen-sm) {
+          max-width: 65px;
+          max-height: 95px;
         }
       }
     }
@@ -2493,3 +2592,94 @@
   }
 }
 
+
+
+// Pagination
+.pagination{
+  box-shadow: $main-shadow;
+  width: fit-content;
+  border-radius: 7px;
+  overflow: hidden;
+  margin: auto;
+  
+  .page-item{
+    
+    .page-link{
+      border: none;
+      color: $black2;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      padding: 12px 18px;
+      font-size: 17px;
+      height: 100%;
+      
+      #{$ltr} & {
+        border-right: 1px solid rgba($main, .7);
+      }
+      #{$rtl} & {
+        border-left: 1px solid rgba($main, .7);
+      }
+
+      @media screen and (max-width:$screen-xxs) {
+        padding: 8px 14px;
+      }
+
+      .ic{
+        // padding: 3px 7px;
+        border-radius: 7px;
+        border: 2px solid rgba($main, .7);
+        @include center;
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+        color: $main;
+        transition: $main-transition;
+        // box-shadow: $main-shadow;
+
+        @media screen and (max-width:$screen-xxs) {
+          width: 20px;
+          height: 20px;
+        }
+
+        i{
+          #{$ltr} & {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+
+      &.active{
+        color: $main;
+      }
+
+      &:hover, &:focus{
+        background-color: $main;
+        color: $white;
+
+        .ic{
+          color: $white;
+          border-color: $white;
+        }
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      
+    }
+
+    &:last-child{   
+      .page-link{
+        #{$ltr} & {
+            border-right: 0;
+        }
+        #{$rtl} & {
+            border-left: 0;
+        }
+      }             
+    }
+
+  }
+
+}

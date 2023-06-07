@@ -1549,41 +1549,6 @@
         }
     </script>
 
-
-    <!-- Upload Pdf -->
-    <script>
-        $(".file").change(function() {
-            imgPreview(this);
-        });
-
-        function imgPreview(input){
-
-            let pdfContainer = $(input).parents('.input-g').find('.pdf-con');
-
-            pdfContainer.html('')
-
-            Object.values(input.files).forEach(function(file) {
-
-                var name = file.name;
-
-                let myFile = `
-                    <div class="file-con">
-                        ${name}
-                        <i class="fa-solid fa-xmark close"></i>
-                    </div>
-                `;
-
-                pdfContainer.append(myFile);
-
-                $('.close').on('click', function(e){
-                    $(this).parents('.file-con').remove();
-                });
-
-            })
-
-        }
-    </script>
-
     <!-- Rating -->
     <script>
         $(function () {

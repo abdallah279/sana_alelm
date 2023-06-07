@@ -387,6 +387,44 @@
                         }
                     }
                 }
+
+                .course-links{
+                    display: flex;
+                    align-items: center;
+
+                    .link{
+                        font-size: 15px;
+                        color: $main;
+                        padding: 2px 10px;
+                        
+                        #{$ltr} & {
+                            border-right: 1px solid rgba($color: $black, $alpha: .3);
+                        }
+                        #{$rtl} & {
+                            border-left: 1px solid rgba($color: $black, $alpha: .3);
+                        }
+
+                        &:first-child{
+                            
+                            #{$ltr} & {
+                                padding: 2px 10px 2px 0px;
+                            }
+                            #{$rtl} & {
+                                padding: 2px 0 2px 10px;
+                            }
+                        }
+
+                        &:last-child{
+                            
+                            #{$ltr} & {
+                                border-right: none;
+                            }
+                            #{$rtl} & {
+                                border-left: none;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -1091,11 +1129,12 @@
 // main-table
 .table-container{
     overflow-x: auto;
+    padding-bottom: 12px !important;
     &::-webkit-scrollbar {
         height: 4px;
     }
     &::-webkit-scrollbar-track {
-        background: transparent;
+        background: #f0f0f0;
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 25px;
@@ -1138,6 +1177,123 @@
             border: 1px solid rgba($color: $black, $alpha: .2);
             font-size: 15px;
             color: $black;
+
+            &.td-buttons{
+                // height: 100%;
+                border: 0;
+                padding: 0;
+                @include between;
+
+                .td-btn{
+                    background-color: transparent;
+                    flex: 1;
+                    border-bottom: 1px solid rgba($color: $black, $alpha: .2);
+                    padding: 14px 7px;
+                    height: 48px;
+                    width: 48px;
+                    flex-shrink: 0;
+                    
+                    #{$ltr} & {
+                        border-right: 1px solid rgba($color: $black, $alpha: .2);
+                    }
+                    #{$rtl} & {
+                        border-left: 1px solid rgba($color: $black, $alpha: .2);
+                    }
+
+                    .ic{
+                        max-width: 24px;
+                        max-height: 22px;
+                    }
+
+                    &:last-child{
+                        
+                        #{$ltr} & {
+                            border-right: 0;
+                        }
+                        #{$rtl} & {
+                            border-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        tr{
+            &:last-child{
+                td.td-buttons{
+                    .td-btn{
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.sec-table{
+
+        thead{
+            border: 1px solid rgba($color: $main, $alpha: .7);
+            th{
+                padding: 10px 15px;
+                border: none;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+
+        tbody{
+            td{
+                padding: 14px 15px;
+                text-align: center;
+                border: none;
+                border-bottom: 1px solid rgba($color: $black, $alpha: .2);
+                font-size: 15px;
+                color: $black;
+
+                .delete-btn{
+                    background-color: transparent;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    font-size: 15px;
+                    color: $black;
+
+                    .ic{
+                        max-width: 24px;
+                        max-height: 22px;
+                    }
+                }
+
+                .ic-bar{
+                    max-width: 32px;
+                }
+
+                .course-page-img{
+                    width: 250px;
+                    // height: 280px;
+                }
+            }
+        }
+    }
+
+    &.three-table{
+
+        tbody{
+            tr{
+                &:nth-child(even){
+                    border-bottom: 1px solid rgba($color: $black, $alpha: .2);
+                }
+            }
+
+            td{
+                
+                &:first-child{
+                    text-align: start;
+                }
+
+                border-bottom: none !important;
+            }
         }
     }
 }
@@ -1359,6 +1515,14 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+
+    &.sm{
+        height: 180px;
+    }
+
+    &.md{
+        height: 310px;
+    }
 
     &.lg{
         height: 380px;
@@ -1877,3 +2041,240 @@
 
 // Map
 .pac-container { z-index: 100000 !important; }
+
+
+// Filter Table
+.filter-table{
+    @include between;
+    gap: 15px 12px;
+    flex-wrap: wrap;
+    
+    .filter-select{
+        width: 155px;
+        border: 1px solid $main;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        flex-grow: 1;
+        flex-shrink: 0;
+        height: 45px;
+        
+
+        &.lg{
+            width: 190px;
+        }
+
+        &.bg-main{
+            border: none;
+            .select{
+                ~ .select2 .select2-selection--single{
+                    background-color: $main;
+
+                    .select2-selection__rendered{
+                        color: $white;
+                    }
+
+                    .select2-selection__arrow::after{
+                        color: $white;
+                    }
+                }
+
+            }
+        }
+        
+        .select{
+            ~ .select2 .select2-selection--single{
+                border: none !important;
+                @include dir-padding-left(4px);
+                
+                .select2-selection__rendered{
+                    color: $black;
+                    font-size: 14px;
+                }
+
+                .select2-selection__arrow{
+                    @include dir-right(7px);
+                }
+            }
+            
+        }
+    }
+
+    .filter-search{
+        width: 210px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 6px;
+        height: 45px;
+
+        @media screen and (max-width:$screen-xs) {
+            width: 100%;
+        }
+
+        .input{
+            width: 100%;
+            height: 100%;
+            padding: 8px 0;
+            
+            &::placeholder{
+                color: $black;
+            }
+        }
+
+        .icon{
+            flex-shrink: 0;
+            @include circle(33px);
+            @include center;
+            font-size: 13px;
+            background-color: $main;
+            color: $white;
+        }
+    }
+
+    .main-btn{
+        min-width: fit-content;
+        padding: 12px 10px;
+        height: 45px;
+        border-radius: 8px;
+
+        .ic{
+            max-width: 28px;
+            max-height: fit-content;
+        }
+    }
+
+}
+
+
+// Rating items
+.rating-items{
+
+    .rate-item{
+        padding: 15px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width:$screen-xs) {
+            align-items: start;
+            flex-direction: column;
+        }
+
+        .rate-img{
+            @include circle(65px);
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .content{
+            width: 100%;
+            .top{
+                @include between;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+
+                .name{
+                    font-size: 16px;
+                    font-family: fontDemi;
+                    color: $black;
+                }
+
+                .time{
+                    font-size: 15px;
+                }
+            }
+
+            .info{
+                font-size: 14px;
+                color: $black;
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+
+            .pdf-con{
+                @include between;
+                gap: 12px;
+                flex-wrap: wrap;
+                
+                .pdf-icon{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .pdf-ic{
+                        max-height: 40px;
+
+                        .pdf-text{
+                            font-size: 15px;
+                            color: $black;
+                        }
+                    }
+                }
+
+                .pdf-raido{
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+
+                    .icon-box{
+                        position: relative;      
+    
+                        .icon{
+                            @include circle(26px);
+                            border: 1px solid rgba($color: $main, $alpha: .7);
+
+                            &.active{
+                                background-color: $main;
+                                border-color: transparent;
+                                @include center;
+                                transition: $main-transition;
+                                
+                                &::before{
+                                    content: '\f00c';
+                                    font-family: "Font Awesome 5 Free";
+                                    // position: absolute;
+                                    font-weight: 900;
+                                    font-size: 16px;
+                                    color: $white;
+                                    transition: $main-transition;
+                                }
+                            }
+                        }
+
+                        // .hidden-input{
+                        //     &:checked{
+                        //        + .icon{
+                        //         background-color: $main;
+                        //         border-color: transparent;
+                        //         @include center;
+                        //         transition: $main-transition;
+                                
+                        //         &::before{
+                        //             content: '\f00c';
+                        //             font-family: "Font Awesome 5 Free";
+                        //             // position: absolute;
+                        //             font-weight: 900;
+                        //             font-size: 16px;
+                        //             color: $white;
+                        //             transition: $main-transition;
+                        //         }
+                        //        } 
+                        //     }
+                        // }
+                    }
+                }
+
+            }
+
+        }
+    }
+}

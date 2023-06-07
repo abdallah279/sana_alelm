@@ -1502,13 +1502,12 @@
                 <div class="input-g">
                     <label class="main-label">المتغير في المقرر <span class="hint">*</span></label>
                     <div class="main-input">
-                        <input type="file" name="" id="idPdf" accept="application/" class="hidden-input file">
+                        <input type="file" name="" id="idPdf" accept="application/*" class="hidden-input file">
                         <label for="idPdf" class="input-me photo-input">
                             يرجي إرفاق ملف يوضح التغيير المذكور
                         </label>
                         <img src="../assets/imgs/icons/export.png" alt="" class="main-icon ic">
                     </div>
-                    <div class="pdf-con"></div>
                 </div>
     
                 </div>
@@ -1632,7 +1631,7 @@
 
         function imgPreview(input){
 
-            let pdfContainer = $(input).parents('.input-g').find('.pdf-con');
+            let pdfContainer = $(input).parents('.input-g').find('.photo-input');
 
             pdfContainer.html('')
 
